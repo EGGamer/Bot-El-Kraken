@@ -1,7 +1,7 @@
 const botconfig = require("./botconfig.json");
 const tokenFile = require("./node_modules/discord.js/token.json")
 const Discord = require("discord.js");
-
+var t = tokenFile.token;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async =>{
@@ -84,4 +84,4 @@ bot.on("message", async message =>
     }
 });
 
-bot.login(tokenFile.token);
+bot.login(process.env.t);
