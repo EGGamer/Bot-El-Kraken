@@ -1,5 +1,5 @@
 const botconfig = require("./botconfig.json");
-const tokenFile = require("./token.json")
+const tokenFile = require("./node_modules/discord.js/token.json")
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
@@ -24,7 +24,7 @@ bot.on("message", async message =>
     if(cmd === `${prefix}reportarusuario`)
     {
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!rUser) return message.channel.send("No se ha podido encontrar al ususario.");
+        if(!rUser) return message.channel.send("No se ha podido encontrar al usuario.");
         let reason = args.join(" ").slice[22];
 
         let reportEmbed = new Discord.RichEmbed()
