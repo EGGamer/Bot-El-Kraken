@@ -105,11 +105,6 @@ bot.on("message", async message =>
     
     return;
     }
-    /*if(cmd === `${prefix}reportarusuario`)
-    {
-       
-        return;
-    }*/
     
     
     
