@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+const bot = new Discord.Client({disableEveryone: true});
 const fs = requiere("fs");
 bot.commands = new Discord.Collection();
 
@@ -21,7 +22,7 @@ fs.readdir("./commands/", (err, files) =>{
 
 })
 
-const bot = new Discord.Client({disableEveryone: true});
+
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
