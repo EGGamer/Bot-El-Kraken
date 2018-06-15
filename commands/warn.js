@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
   if(!warnchannel) return message.reply("No he podido encontrar el canal incidentes");
 
   
-
+  warnchannel.send(warnEmbed);
   if(warns[wUser.id].warns == 1){
     let muterole = message.guild.roles.find(`name`, "muted");
     if(!muterole) return message.reply("Deberías crear el rol de muted");
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
     let mutetime = "5m";
     await(wUser.addRole(muterole.id));
     message.channel.send(`<@${wUser.id}> ha sido muteado por 1 minutos`);
-    warnchannel.send(warnEmbed);
+    
 
     setTimeout(function(){
       wUser.removeRole(muterole.id)
@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
   if(warns[wUser.id].warns == 2){
     let muterole = message.guild.roles.find(`name`, "muted");
     if(!muterole) return message.reply("Deberías crear el rol de muted");
-    warnchannel.send(warnEmbed);
+    
 
     let mutetime = "10m";
     await(wUser.addRole(muterole.id));
@@ -67,7 +67,7 @@ module.exports.run = async (bot, message, args) => {
   if(warns[wUser.id].warns == 3){
     message.guild.member(wUser).kick(reason);
     message.reply(`<@${wUser.id}> ha sido expulsado.`)
-    warnchannel.send(warnEmbed);
+    
   }
 
 }
