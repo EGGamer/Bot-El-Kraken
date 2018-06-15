@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) =>
         setTimeout(function(){
             wUser.removeRole(muterol.id);
             message.channel.reply(`${wUser} ha sido desmuteado`);
-        })
+        }), ms(mutetime);
     }
     if(warns[wUser.id].warns == 3)
     {
