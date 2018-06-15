@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) =>
     .setDescription("Warnings")
     .setAuthor(message.setAuthor.username)
     .setColor("#f4b942")
-    .addField("Usuario avisado", wUser.tag)
+    .addField("Usuario avisado", `<@${wUser.tag}>`)
     .addField("Avisado en", message.channel)
     .addField("Cantidad de Avisos", warns[wUser.id].warns)
     .addField("razón", reason);
