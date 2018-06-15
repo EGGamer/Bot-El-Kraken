@@ -26,7 +26,7 @@ bot.on("message", async message =>
     m.edit(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`);
 }
     
-    if(cmd === `${prefix}kick`)
+    if(cmd === `${prefix} kick`)
     {
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
