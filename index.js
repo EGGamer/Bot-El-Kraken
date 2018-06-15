@@ -48,7 +48,7 @@ bot.on("message", async message =>
     let incidentsChannel = message.guild.channels.find(`name`, "incidentes");
     if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de incidentes");
     
-    message.guild.member(kUser).kick(reason);
+    message.guild.member(kUser).kick(kReason);
     incidentsChannel.send(kickEmbed);
 
     return;
