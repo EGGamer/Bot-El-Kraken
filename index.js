@@ -32,7 +32,12 @@ bot.on("message", async message =>
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("No se ha podido encontrar al usuariio");
     let kReason = args.join(" ").slice(22)
+    
 
+    let kickEmbed = new Discord.RichEmbed()
+    .setDescription("~Kickeado~")
+    .setColor("#f44141")
+    
         return;
     }
 
@@ -44,7 +49,7 @@ bot.on("message", async message =>
 
         let reportEmbed = new Discord.RichEmbed()
         .setDescription("Reportes")
-        .setColor("#f44242")
+        .setColor("#f4e242")
         .addField("Usuario reportado", `${rUser} con la id: ${rUser.id}`)
         .addField("Creador del reporte", `${message.author} con la id: ${message.author.id}`)
         .addField("Canal", message.channel)
