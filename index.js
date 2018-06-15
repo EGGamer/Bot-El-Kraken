@@ -60,7 +60,7 @@ bot.on("message", async message =>
     if(!bUser) return message.channel.send("No se ha podido encontrar al usuariio");
     let bReason = args.join(" ").slice(22)
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No puedo hacerlo");
-    if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Esa persona no puede ser baneada");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Esa persona no puede ser baneada");
 
 
     let banEmbed = new Discord.RichEmbed()
