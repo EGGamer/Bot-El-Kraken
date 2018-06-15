@@ -32,7 +32,9 @@ bot.on("message", async message =>
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("No se ha podido encontrar al usuariio");
     let kReason = args.join(" ").slice(22)
-    
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No puedo hacerlo");
+    if(kUser.hasPermission("MANAGE_MESSAGES ")) return message.channel.send("Esa persona no puede ser kickeada");
+
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kickeado~")
@@ -44,7 +46,10 @@ bot.on("message", async message =>
     .addField("Razón", kReason);
 
     let incidentsChannel = message.guild.channels.find(`name`, "incidentes");
-        if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de incidentes");
+    if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de incidentes");
+    
+    message.guild.member(kUser).kick(reason);
+    incidentsChannel.send(kickEmbed);
 
     return;
     }
