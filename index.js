@@ -41,6 +41,9 @@ bot.on("message", async message =>
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot,message,args);
+
     if(cmd === `${prefix}ping`) {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
