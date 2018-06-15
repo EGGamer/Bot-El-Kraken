@@ -67,7 +67,7 @@ bot.on("message", async message =>
     .setDescription("~Baneado~")
     .setColor("#fc1111")
     .setTimestamp()
-    .addField("Usuario Baneado", `${kUser} con la ID ${kUser.id}`)
+    .addField("Usuario Baneado", `${bUser} con la ID ${bUser.id}`)
     .addField("Baneado Por", `<@${message.author.id}> con la id ${message.author.id}`)
     .addField("Baneado en", message.channel)
     .addField("Razón", bReason);
