@@ -37,7 +37,7 @@ module.exports.run = async (bot, message, args) =>
     setTimeout(function(){
         tomute.removeRole(muterole.id);
         message.channel.send(`<@${tomute.id}> ha sido desmuteado.`)
-    }, ms(muteTime)
+    }, ms(muteTime));
 }
 
 module.exports.help = {
