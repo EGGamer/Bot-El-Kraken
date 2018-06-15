@@ -26,7 +26,7 @@ bot.on("message", async message =>
     
     let pingEmbed = new Discord.RichEmbed()
     .setTitle("Ping?")
-    .setDescription(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`)
+    .setDescription(`Pong! La latencia es ${message.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`)
     .setTimestamp;
     message.channel.send(pingEmbed);
 }
