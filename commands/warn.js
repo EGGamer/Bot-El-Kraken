@@ -32,6 +32,7 @@ module.exports.run = async (bot, message, args) =>
 
 
     let warnchannel = message.guild.channel.find(`name`, "incidentes");
+
     if(!warnchannel) return message.reply("no he podido encontrar el canal de incidentes");
 
     warnchannel.send(warnEmbed);
