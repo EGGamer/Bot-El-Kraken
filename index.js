@@ -20,10 +20,15 @@ bot.on("message", async message =>
     let args = messageArray.slice(1);
     
     if(cmd === `${prefix}ping`) {
-    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+        
+     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`);
+    
+    let pingEmbed = new Discord.RichEmbed()
+    .setTitle("Ping?")
+    .setDescription(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`)
+    .setTimestamp;
+    message.channel.send(pingEmbed);
 }
     
     if(cmd === `${prefix}reportarusuario`)
