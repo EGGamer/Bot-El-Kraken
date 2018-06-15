@@ -37,8 +37,16 @@ bot.on("message", async message =>
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kickeado~")
     .setColor("#f44141")
-    
-        return;
+    .setTimestamp()
+    .addField("Usuario Kickeado", `${kUser} con la ID ${kUser.id}`)
+    .addField("Kickeado Por", `<@${message.author.id}> con la id ${message.author.id}`)
+    .addField("Kickeado en", message.channel)
+    .addField("Razón", kReason);
+
+    let incidentsChannel = message.guild.channels.find(`name`, "incidentes");
+        if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de incidentes");
+
+    return;
     }
 
     if(cmd === `${prefix}reportarusuario`)
