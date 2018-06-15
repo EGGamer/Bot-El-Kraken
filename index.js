@@ -26,11 +26,21 @@ bot.on("message", async message =>
     m.edit(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`);
 }
     
+    if(cmd === `${prefix}kick`)
+    {
+
+    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!kUser) return message.channel.send("No se ha podido encontrar al usuariio");
+    let kReason = args.join(" ").slice(22)
+
+        return;
+    }
+
     if(cmd === `${prefix}reportarusuario`)
     {
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!rUser) return message.channel.send("No se ha podido encontrar al usuario.");
-        let reason = args.join(" ").slice[22];
+        let reason = args.join(" ").slice(22);
 
         let reportEmbed = new Discord.RichEmbed()
         .setDescription("Reportes")
