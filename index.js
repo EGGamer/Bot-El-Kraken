@@ -33,7 +33,7 @@ bot.on("message", async message =>
     if(!kUser) return message.channel.send("No se ha podido encontrar al usuariio");
     let kReason = args.join(" ").slice(22)
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No puedo hacerlo");
-    if(kUser.hasPermission("MANAGE_MESSAGES ")) return message.channel.send("Esa persona no puede ser kickeada");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Esa persona no puede ser kickeada");
 
 
     let kickEmbed = new Discord.RichEmbed()
