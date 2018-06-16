@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) =>
         embed.addField("Carlis", "**?**, **?**, **?**, **?**");
         embed.addField("Cutu", "**?**, **?**, **?**, **?**");
         embed.setImage("https://i.imgur.com/ypara7v.png");
-        message.channel.send(embed);
+        message.channel.send(repsEmbed);
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");
     if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de reputaciones");
