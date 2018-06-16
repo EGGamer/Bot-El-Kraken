@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Usuario avisado", `<@${wUser.id}>`)
   .addField("Avisado en", message.channel)
   .addField("Cantidad de avisos", warns[wUser.id].warns)
-  .addField("Razón", reason);
+  .addField("Razon", reason);
 
   let warnchannel = message.guild.channels.find(`name`, "incidentes");
   if(!warnchannel) return message.reply("No he podido encontrar el canal incidentes");
