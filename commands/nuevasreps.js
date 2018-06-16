@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
-    
+    message.delete();
         var repsEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
