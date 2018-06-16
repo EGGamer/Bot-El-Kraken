@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) =>
     .setColor("#4286f4")
     .setThumbnail(bicon)
     .addField("Nombre del bot", bot.user.username)
-    .addField("Creado el", bot.user.createdAt)
+    .addField("Versión del bot", "v. 2.0")
     .addField("Creado por", "EG Gamer");
     
 
