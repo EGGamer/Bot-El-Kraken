@@ -21,8 +21,6 @@ module.exports.run = async (bot, message, args) =>
    if(juego === "ow") return bgOw.send(`${message.author} está buscando gente para jugar **Overwatch**`);
    
    
-
-
     
 }
 
