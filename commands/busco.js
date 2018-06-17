@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) =>
     .setAuthor(message.member.displayName, message.author.displayAvatarURL);
    
  
-    bgDbd.send(`[<@&449905080599052294>]`, buscSotEmbed);
+    bgSot.send(`[<@&449905080599052294>]`, buscSotEmbed);
     
     message.delete();
    }
@@ -58,7 +58,7 @@ module.exports.run = async (bot, message, args) =>
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
-        bgDbd.send(`[<@&449904836528570368>]`, buscRlEmbed);
+        bgRl.send(`[<@&449904836528570368>]`, buscRlEmbed);
         
         message.delete();
     }
@@ -68,12 +68,12 @@ module.exports.run = async (bot, message, args) =>
         .setTitle("BUSCANDO COMPAÑEROS")
         .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
         .addField("Juego:", "Fortnite", true)
-        .setThumbnail("https://ih0.redbubble.net/image.505935508.2355/flat,1000x1000,075,f.u5.jpg")
+        .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
         .setTimestamp()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
-        bgDbd.send(`[<@&457128298431119360>]`, buscFtEmbed);
+        bgFt.send(`[<@&457128298431119360>]`, buscFtEmbed);
         
         message.delete();
     }
@@ -88,7 +88,7 @@ module.exports.run = async (bot, message, args) =>
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
-        bgDbd.send(`[<@&449912857342115850>]`, buscOwEmbed);
+        bgOw.send(`[<@&449912857342115850>]`, buscOwEmbed);
         
         message.delete();
     }
