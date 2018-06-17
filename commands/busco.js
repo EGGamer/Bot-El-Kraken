@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) =>
     //-busco <juego>
 
    let juego = args[0];
-   let descripción = args;
+   let descripción = args.join(" ").slice(22);
 
    //Canales de texto
    let bgSot = message.guild.channels.find(`name`, "busco-gente-sot");
