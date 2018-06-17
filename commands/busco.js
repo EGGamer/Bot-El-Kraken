@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) =>
    .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
    .addField("Juego:", "Dead by Daylight", true)
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
-   .setAuthor(`<@${message.author.id}>`, message.author.avatarURL)
+   .setAuthor(`<@${message.author}>`, message.author.avatarURL)
    .setTimestamp();
    bgDbd.send(buscDbdEmbed);
    message.delete();
