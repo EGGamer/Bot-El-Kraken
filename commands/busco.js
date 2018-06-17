@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) =>
     //-busco <juego>
 
    let juego = args[0];
-   let descripción = args[1];
+   let descripción = args.join(" ").slice(22);
 
    //Canales de texto
    let bgSot = message.guild.channels.find(`name`, "busco-gente-sot");
@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) =>
    .setTimestamp()
    .setAuthor(message.member.displayName, message.author.displayAvatarURL);
    if(descripción) buscDbdEmbed.addField("Descripción", descripción, false);
-   
+
    bgDbd.send(`[<@&449912733799022603>]`, buscDbdEmbed);
    
    message.delete();
