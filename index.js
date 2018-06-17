@@ -4,7 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/.", (err, files) =>{
+fs.readdir("./commands/administración", (err, files) =>{
     if(err) console.log(err);
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
@@ -20,7 +20,42 @@ fs.readdir("./commands/.", (err, files) =>{
     bot.commands.set(props.help.name, props);
 })
 
+});
+fs.readdir("./commands/ayudabot", (err, files) =>{
+    if(err) console.log(err);
+
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if(jsfile.length <= 0){
+        conslo.log("No se hna podido encontar comandos");
+        return;
+    }
+
+    jsfile.forEach((f, i) =>
+{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`)
+    bot.commands.set(props.help.name, props);
 })
+
+});
+fs.readdir("./commands/reputaciones", (err, files) =>{
+    if(err) console.log(err);
+
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if(jsfile.length <= 0){
+        conslo.log("No se hna podido encontar comandos");
+        return;
+    }
+
+    jsfile.forEach((f, i) =>
+{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`)
+    bot.commands.set(props.help.name, props);
+})
+
+});
+
 
 
 
