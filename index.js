@@ -61,7 +61,7 @@ fs.readdir("./commands/reputaciones", (err, files) =>{
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
-    bot.user.setActivity("LOS KRUKEN CHANCLAS", {type: "WATCHING"});
+    bot.user.setActivity("LOS KRUKEN CHANCLAS", {type: "LISTENING"});
     
     //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
 });
