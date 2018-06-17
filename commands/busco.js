@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //-busco <juego>
-   let juego = message.args[0];
+   let juego = args[0];
    
    if(!juego) return message.reply(`${message.author} no has especificado un juego.`);
    
