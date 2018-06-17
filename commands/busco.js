@@ -25,6 +25,7 @@ module.exports.run = async (bot, message, args) =>
    .addField("Juego:", "Dead by Daylight", true)
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
    .setTimestamp()
+   .setColor("#e8e8e8")
    .setAuthor(message.member.displayName, message.author.displayAvatarURL);
   
 
@@ -40,6 +41,7 @@ module.exports.run = async (bot, message, args) =>
     .addField("Juego:", "Sea of Thieves", true)
     .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png")
     .setTimestamp()
+    .setColor("#d16a3a")
     .setAuthor(message.member.displayName, message.author.displayAvatarURL);
    
  
@@ -55,6 +57,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("Juego:", "Rocket League", true)
         .setThumbnail("https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png")
         .setTimestamp()
+        .setColor("#006dfc")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
@@ -70,6 +73,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("Juego:", "Fortnite", true)
         .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
         .setTimestamp()
+        .setColor("#7e00fc")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
@@ -85,6 +89,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("Juego:", "Overwatch", true)
         .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
         .setTimestamp()
+        .setColor("#ff8300")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
