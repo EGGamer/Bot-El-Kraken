@@ -8,7 +8,8 @@ module.exports.run = async (bot, message, args) =>
    if(!juego) return message.reply(`${message.author} no has especificado un juego.`);
    
    if(juego) return message.channel.send(`@everyone <@${message.author.id}> está buscando gente para jugar **${juego}**.`);
-   message.channel.send(args[0]);
+   
+   message.channel.send(juego);
 
     
 }
