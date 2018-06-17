@@ -3,8 +3,10 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //-busco <juego>
+
    let juego = args[0];
-   
+   let descripción = args[1];
+
    //Canales de texto
    let bgSot = message.guild.channels.find(`name`, "busco-gente-sot");
    let bgDbd = message.guild.channels.find(`name`, "busco-gente-dbd");
@@ -13,6 +15,7 @@ module.exports.run = async (bot, message, args) =>
    let bgFt = message.guild.channels.find(`name`, "busco-gente-ft");
    
    if(!juego) return message.reply(` no has especificado un juego.`);
+
    //JUEGOS
    //DBD
    if(juego === "dbd"){
@@ -23,6 +26,8 @@ module.exports.run = async (bot, message, args) =>
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
    .setTimestamp()
    .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+   if(descripción) buscDbdEmbed.addField("Descripción", descripción, false);
+   
    bgDbd.send(`[<@&449912733799022603>]`, buscDbdEmbed);
    
    message.delete();
