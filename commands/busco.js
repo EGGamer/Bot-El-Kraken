@@ -13,12 +13,12 @@ module.exports.run = async (bot, message, args) =>
    let bgFt = message.guild.channels.find(`name`, "busco-gente-ft");
    
    if(!juego) return message.reply(` no has especificado un juego.`);
-   
-   if(juego === "dbd") return message.bgDbd.send(`${message.author} está buscando gente para jugar **Dead by Daylight**`);
-   if(juego === "sot") return message.bgSot.send(`${message.author} está buscando gente para jugar **Sea of Thieves**`);
-   if(juego === "rl") return message.bgRl.send(`${message.author} está buscando gente para jugar **Rocket League**`);
-   if(juego === "ft") return message.bgFt.send(`${message.author} está buscando gente para jugar **Fortnite**`);
-   if(juego === "ow") return message.bgOw.send(`${message.author} está buscando gente para jugar **Overwatch**`);
+   //Juegos
+   if(juego === "dbd") return bgDbd.send(`${message.author} está buscando gente para jugar **Dead by Daylight**`);
+   if(juego === "sot") return bgSot.send(`${message.author} está buscando gente para jugar **Sea of Thieves**`);
+   if(juego === "rl") return bgRl.send(`${message.author} está buscando gente para jugar **Rocket League**`);
+   if(juego === "ft") return bgFt.send(`${message.author} está buscando gente para jugar **Fortnite**`);
+   if(juego === "ow") return bgOw.send(`${message.author} está buscando gente para jugar **Overwatch**`);
    
    
 
