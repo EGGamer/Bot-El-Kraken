@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) =>
    .addField("Juego:", "Dead by Daylight", true)
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
    .setTimestamp();
-   bgDbd.send("@everyone")
+   bgDbd.send(`@everyone`)
    bgDbd.send(buscDbdEmbed);
    message.delete();
    }
