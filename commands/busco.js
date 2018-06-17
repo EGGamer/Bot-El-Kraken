@@ -32,16 +32,64 @@ module.exports.run = async (bot, message, args) =>
    
    message.delete();
    }
-   //SOT
+   //SOT   
+   if(juego === "sot"){
+    let buscSotEmbed = new Discord.RichEmbed()
+    .setTitle("BUSCANDO COMPAÑEROS")
+    .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
+    .addField("Juego:", "Sea of Thieves", true)
+    .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png")
+    .setTimestamp()
+    .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+   
+ 
+    bgDbd.send(`[<@&449905080599052294>]`, buscSotEmbed);
+    
+    message.delete();
+    //RL
+    if(juego === "rl"){
+        let buscRlEmbed = new Discord.RichEmbed()
+        .setTitle("BUSCANDO COMPAÑEROS")
+        .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
+        .addField("Juego:", "Rocket League", true)
+        .setThumbnail("https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png")
+        .setTimestamp()
+        .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+       
+     
+        bgDbd.send(`[<@&449904836528570368>]`, buscRlEmbed);
+        
+        message.delete();
+    //FT
+    if(juego === "ft"){
+        let buscFtEmbed = new Discord.RichEmbed()
+        .setTitle("BUSCANDO COMPAÑEROS")
+        .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
+        .addField("Juego:", "Fortnite", true)
+        .setThumbnail("https://ih0.redbubble.net/image.505935508.2355/flat,1000x1000,075,f.u5.jpg")
+        .setTimestamp()
+        .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+       
+     
+        bgDbd.send(`[<@&457128298431119360>]`, buscFtEmbed);
+        
+        message.delete();
+    //Overwatch
+    if(juego === "ow"){
+        let buscOwEmbed = new Discord.RichEmbed()
+        .setTitle("BUSCANDO COMPAÑEROS")
+        .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
+        .addField("Juego:", "Overwatch", true)
+        .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
+        .setTimestamp()
+        .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+       
+     
+        bgDbd.send(`[<@&449912857342115850>]`, buscOwEmbed);
+        
+        message.delete();
 
 
-
-
-
-   if(juego === "sot") return bgSot.send(`${message.author} está buscando gente para jugar **Sea of Thieves**`);
-   if(juego === "rl") return bgRl.send(`${message.author} está buscando gente para jugar **Rocket League**`);
-   if(juego === "ft") return bgFt.send(`${message.author} está buscando gente para jugar **Fortnite**`);
-   if(juego === "ow") return bgOw.send(`${message.author} está buscando gente para jugar **Overwatch**`);
    
    
     
