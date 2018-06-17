@@ -26,7 +26,7 @@ fs.readdir("./commands/", (err, files) =>{
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
-    bot.user.setActivity("SIRVIENDO A LOS KRUKEN CHANCLAS", /*{type: "PLAYING"}*/);
+    bot.user.setActivity("SIRVIENDO A LOS KRUKEN CHANCLAS", {type: "NONE"});
     
     //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
 });
