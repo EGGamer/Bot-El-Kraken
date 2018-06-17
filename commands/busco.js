@@ -13,8 +13,24 @@ module.exports.run = async (bot, message, args) =>
    let bgFt = message.guild.channels.find(`name`, "busco-gente-ft");
    
    if(!juego) return message.reply(` no has especificado un juego.`);
-   //Juegos
-   if(juego === "dbd") return bgDbd.send(`${message.author} está buscando gente para jugar **Dead by Daylight**`);
+   //JUEGOS
+   //DBD
+   if(juego === "dbd"){
+   let buscDbdEmbed = new Discord.RichEmbed()
+   .setTitle("BUSCANDO COMPAÑEROS")
+   .setDescription(`¡${message.author} está buscando compañeros de juego!`)
+   .addField("Juego:", "Dead by Daylight", true)
+   .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
+   .setAuthor(message.author, message.author.avatarURL);
+   bgDbd.send(buscDbdEmbed);
+   message.delete();
+   }
+   //SOT
+
+
+
+
+
    if(juego === "sot") return bgSot.send(`${message.author} está buscando gente para jugar **Sea of Thieves**`);
    if(juego === "rl") return bgRl.send(`${message.author} está buscando gente para jugar **Rocket League**`);
    if(juego === "ft") return bgFt.send(`${message.author} está buscando gente para jugar **Fortnite**`);
