@@ -18,10 +18,11 @@ module.exports.run = async (bot, message, args) =>
    if(juego === "dbd"){
    let buscDbdEmbed = new Discord.RichEmbed()
    .setTitle("BUSCANDO COMPAÑEROS")
-   .setDescription(`¡${message.author} está buscando compañeros de juego!`)
+   .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
    .addField("Juego:", "Dead by Daylight", true)
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
-   .setAuthor(message.author, message.author.avatarURL);
+   .setAuthor(message.author, message.author.avatarURL)
+   .setTimestamp();
    bgDbd.send(buscDbdEmbed);
    message.delete();
    }
