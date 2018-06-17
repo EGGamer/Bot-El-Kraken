@@ -4,12 +4,12 @@ const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/administración", (err, files) =>{
+fs.readdir("./commands/administracion", (err, files) =>{
     if(err) console.log(err);
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0){
-        conslo.log("No se hna podido encontar comandos");
+        conslo.log("No se han podido encontar comandos");
         return;
     }
 
@@ -26,7 +26,7 @@ fs.readdir("./commands/ayudabot", (err, files) =>{
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0){
-        conslo.log("No se hna podido encontar comandos");
+        conslo.log("No se han podido encontar comandos");
         return;
     }
 
@@ -43,7 +43,7 @@ fs.readdir("./commands/reputaciones", (err, files) =>{
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0){
-        conslo.log("No se hna podido encontar comandos");
+        conslo.log("No se han podido encontar comandos");
         return;
     }
 
