@@ -46,6 +46,7 @@ module.exports.run = async (bot, message, args) =>
     bgDbd.send(`[<@&449905080599052294>]`, buscSotEmbed);
     
     message.delete();
+   }
     //RL
     if(juego === "rl"){
         let buscRlEmbed = new Discord.RichEmbed()
@@ -60,6 +61,7 @@ module.exports.run = async (bot, message, args) =>
         bgDbd.send(`[<@&449904836528570368>]`, buscRlEmbed);
         
         message.delete();
+    }
     //FT
     if(juego === "ft"){
         let buscFtEmbed = new Discord.RichEmbed()
@@ -74,6 +76,7 @@ module.exports.run = async (bot, message, args) =>
         bgDbd.send(`[<@&457128298431119360>]`, buscFtEmbed);
         
         message.delete();
+    }
     //Overwatch
     if(juego === "ow"){
         let buscOwEmbed = new Discord.RichEmbed()
@@ -88,6 +91,7 @@ module.exports.run = async (bot, message, args) =>
         bgDbd.send(`[<@&449912857342115850>]`, buscOwEmbed);
         
         message.delete();
+    }
 
 
    
