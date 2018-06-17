@@ -21,9 +21,10 @@ module.exports.run = async (bot, message, args) =>
    .setDescription(`¡<@${message.author.id}> está buscando compañeros de juego!`)
    .addField("Juego:", "Dead by Daylight", true)
    .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
-   .setTimestamp();
-   bgDbd.send(`<@${everyone}>`)
-   bgDbd.send(buscDbdEmbed);
+   .setTimestamp()
+   .setAuthor(message.member.displayName, message.author.displayAvatarURL);
+   bgDbd.send(`[<@&449912733799022603>]`, buscDbdEmbed);
+   
    message.delete();
    }
    //SOT
