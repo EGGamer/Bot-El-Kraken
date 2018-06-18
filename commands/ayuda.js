@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) =>
     .setTitle("¿NECESITAS AYUDA?")
     .setDescription("Aquí tienes toda la información que necesitas saber sobre el bot. (En desarrollo, esto va a cambiar)")
     .addField("COMANDOS", ":", true)
+    message.channel.send(ayudaEmbed);
 }
 
 module.exports.help = {
