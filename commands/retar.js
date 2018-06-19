@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("LA PARTIDA Y CÓMO GANAR", "La partida será privada. El founder Killer, y el que ha retado survivor (si los dos están de acuerdo se pueden cambiar los roles). Si el survivor escapa gana en cambio si muere pierde.")
         .addField("REGLAS", "No perks, ni add-ons, sólo pura habilidad. [Sujeto a Cambios]")
         .addField("PREMIO", "Si el que reta gana, se le otorgarán [xxx monedas] un rol de haber ganado a un LKC Founder.")
-        .addField("RETADOR:", `<@${message.author.id}`)
+        .addField("RETADOR:", `<@${message.author.id}>`)
         .addField("LKC FOUNDER RETADO:", `${founder}`)
         .setTimestamp()
         .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
