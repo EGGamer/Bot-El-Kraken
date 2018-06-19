@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>
 {
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args.join(" ").slice(22)
-
+    let founderRole = message.guild.roles.find(`name`, "LKC Founder");
     //si no es founder
     if(!founder.getRole(`name`, "LKC Founder")) return message.reply("Debes retar a un LKC Founder!")
 
