@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) =>
     let juego = args.join(" ").slice(22)
 
     //si no es founder
-    if(!founder.guild.roles.find(`name`, "LKC Founder")) return message.reply("Debes retar a un LKC Founder!")
+    if(!founder.getRole(`name`, "LKC Founder")) return message.reply("Debes retar a un LKC Founder!")
 
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
