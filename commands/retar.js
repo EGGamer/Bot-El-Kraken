@@ -58,7 +58,21 @@ module.exports.run = async (bot, message, args) =>
 
     };
     if(!juego === "ow") return message.reply("debes elegir un juego correcto.");
-    if(!juego === "ft") return message.reply("debes elegir un juego correcto.");
+    if(juego === "ft"){
+        let retarFtEmbed = new Discord.RichEmbed()
+        .setTitle("¡Alguien ha retado a un LKC Founder!")
+        .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Fortnite se acordará una fecha para hacer la partida.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "Será un duo. El que más kills tenga gana, sin importar si se gana la partida, si alguno de los dos muere etc...")
+        .addField("REGLAS", "No robar kills al compañero.")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("RETADOR:", `<@${message.author.id}>`, true)
+        .addField("LKC FOUNDER RETADO:", `${founder}`, true)
+        .setTimestamp()
+        .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
+        .setColor("#7e00fc");
+        retosChannel.send(retarFtEmbed);
+
+    };
     
     
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
