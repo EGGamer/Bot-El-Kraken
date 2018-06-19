@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>
 
     
     let rechazarEmbed = new Discord.RichEmbed()
-    .setTitle("RETO RECHAZAD")
+    .setTitle("RETO RECHAZADO")
     .setDescription(`<@${message.author.id}> ha rechazado el reto de ${retador}. El juego era ${juego}.`)
     .addField("LKC FOUNDER:", `<@${message.author.id}>`)
     .setTimestamp()
