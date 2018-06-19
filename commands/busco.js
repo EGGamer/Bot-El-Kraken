@@ -111,7 +111,7 @@ module.exports.run = async (bot, message, args) =>
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
-        bgOw.send(`[<@&458721112600346631>]`, buscLolEmbed);
+        bgLol.send(`[<@&458721112600346631>]`, buscLolEmbed);
         
         message.delete();
     }
@@ -127,7 +127,7 @@ module.exports.run = async (bot, message, args) =>
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
        
      
-        bgOw.send(`[<@&457128716544376832>]`, buscCsgoEmbed);
+        bgCsgo.send(`[<@&457128716544376832>]`, buscCsgoEmbed);
         
         message.delete();
     }

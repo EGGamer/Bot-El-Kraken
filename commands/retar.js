@@ -73,8 +73,36 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarFtEmbed);
 
     };
-    
-    
+    if(juego === "lol"){
+        let retarLolEmbed = new Discord.RichEmbed()
+        .setTitle("¡Alguien ha retado a un LKC Founder!")
+        .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga League of Legends se acordará una fecha para hacer la partida.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "[*EN DESARROLLO*]")
+        .addField("REGLAS", "[*EN DESARROLLO*]")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("RETADOR:", `<@${message.author.id}>`, true)
+        .addField("LKC FOUNDER RETADO:", `${founder}`, true)
+        .setTimestamp()
+        .setThumbnail("https://savepoint.es/wp-content/uploads/2014/11/ikl0Si.png")
+        .setColor("#f49d41");
+        retosChannel.send(retarLolEmbed);
+
+    };
+    if(juego === "csgo"){
+        let retarLolEmbed = new Discord.RichEmbed()
+        .setTitle("¡Alguien ha retado a un LKC Founder!")
+        .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga CS:GO se acordará una fecha para hacer la partida.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "[*EN DESARROLLO*]")
+        .addField("REGLAS", "[*EN DESARROLLO*]")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("RETADOR:", `<@${message.author.id}>`, true)
+        .addField("LKC FOUNDER RETADO:", `${founder}`, true)
+        .setTimestamp()
+        .setThumbnail("http://1000logos.net/wp-content/uploads/2017/12/CSGO-Logo.png")
+        .setColor("#f49d41");
+        retosChannel.send(retarLolEmbed);
+
+    };
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
 
