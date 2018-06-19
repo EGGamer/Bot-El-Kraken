@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) =>
         let retarSotEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Sea of Thieves se acordará una fecha para hacer el reto.")
-        .addField("LA PARTIDA Y CÓMO GANAR", "Será en el mismo barco. En una misión de calaveras del que tenga nivel más alto. El que más muertes por los esqueletos tenga en una isla gana. Si los dos quedan a 0 muertes, o cantidad de muertes iguales, se hace otra isla.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "Será en el mismo barco. En una misión de calaveras del que tenga nivel más alto. El que más muertes por los esqueletos tenga en una isla pierde. Si los dos quedan a 0 muertes, o cantidad de muertes iguales, se hace otra isla.")
         .addField("REGLAS", "Cualquier arma, se pueden comer platanos. No están permitidos los barriles explosivos ni el uso de cañones.")
         .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
         .addField("RETADOR:", `<@${message.author.id}>`, true)
