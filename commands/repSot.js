@@ -11,7 +11,8 @@ module.exports.run = async (bot, message, args) =>
         .addField("Fran", "**30**, **28**, **27**, **1**")
         .addField("Carlis", "**?**, **?**, **?**, **0**")
         .addField("Cutu", "**22**, **21**, **17**, **0**")
-        .setImage("https://i.imgur.com/ypara7v.png");
+        .setImage("https://i.imgur.com/ypara7v.png")
+        .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png");
         //message.channel.send(repsEmbed);
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");

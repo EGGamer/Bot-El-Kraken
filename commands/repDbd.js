@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("Carlis", "**RANGO**: ? | LVL JUGADOR: ?")
         .addField("Cutu", "**RANGO**: ? | LVL JUGADOR: ?")
         .setColor("#e8e8e8")
+        .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
         //message.channel.send(repsEmbed);
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");
