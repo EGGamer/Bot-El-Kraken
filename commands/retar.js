@@ -22,8 +22,8 @@ module.exports.run = async (bot, message, args) =>
         .addField("RETADOR:", `<@${message.author.id}`)
         .addField("LKC FOUNDER RETADO:", `${founder}`)
         .setTimestamp()
-        .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png");
-        
+        .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
+        .setColor("#e8e8e8");
         retosChannel.send(retarDbDEmbed);
 
     }
