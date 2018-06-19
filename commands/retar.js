@@ -42,7 +42,21 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarSotEmbed);
 
     };
-    if(!juego === "rl") return message.reply("debes elegir un juego correcto.");
+    if(juego === "rl"){
+        let retarRlEmbed = new Discord.RichEmbed()
+        .setTitle("¡Alguien ha retado a un LKC Founder!")
+        .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Rocket League se acordará una fecha para hacer el partido.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "Será un 1vs1 sin mutators. El que más goles tenga gana.")
+        .addField("REGLAS", "Ninguna regla en especial. Juega como mejor sepas.")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("RETADOR:", `<@${message.author.id}>`, true)
+        .addField("LKC FOUNDER RETADO:", `${founder}`, true)
+        .setTimestamp()
+        .setThumbnail("https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png")
+        .setColor("#006dfc");
+        retosChannel.send(retarRlEmbed);
+
+    };
     if(!juego === "ow") return message.reply("debes elegir un juego correcto.");
     if(!juego === "ft") return message.reply("debes elegir un juego correcto.");
     
