@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) =>
         let retarRlEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Rocket League se acordará una fecha para hacer el partido.")
-        .addField("LA PARTIDA Y CÓMO GANAR", "Será un 1vs1 sin mutators. El que más goles tenga gana.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "Será un 1vs1 sin mutators. Da igual la plataforma. El que más goles tenga gana.")
         .addField("REGLAS", "Ninguna regla en especial. Juega como mejor sepas.")
         .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
         .addField("RETADOR:", `<@${message.author.id}>`, true)
