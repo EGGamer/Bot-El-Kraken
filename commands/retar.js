@@ -89,7 +89,7 @@ module.exports.run = async (bot, message, args) =>
 
     };
     if(juego === "csgo"){
-        let retarLolEmbed = new Discord.RichEmbed()
+        let retarCsgoEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga CS:GO se acordará una fecha para hacer la partida.")
         .addField("LA PARTIDA Y CÓMO GANAR", "[*EN DESARROLLO*]")
@@ -100,7 +100,7 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setThumbnail("http://1000logos.net/wp-content/uploads/2017/12/CSGO-Logo.png")
         .setColor("#f49d41");
-        retosChannel.send(retarLolEmbed);
+        retosChannel.send(retarCsgoEmbed);
 
     };
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
