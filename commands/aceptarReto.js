@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) =>
     .addField("LKC FOUNDER:", `<@${message.author.id}>`)
     .setTimestamp()
     .setColor("#4cff4f");
+    retosChannel.send(aceptarEmbed);
 }
 
 module.exports.help = {

@@ -10,12 +10,13 @@ module.exports.run = async (bot, message, args) =>
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
 
     
-    let aceptarEmbed = new Discord.RichEmbed()
+    let rechazarEmbed = new Discord.RichEmbed()
     .setTitle("RETO RECHAZAD")
     .setDescription(`<@${message.author.id}> ha rechazado el reto de ${retador}. El juego era ${juego}.`)
     .addField("LKC FOUNDER:", `<@${message.author.id}>`)
     .setTimestamp()
     .setColor("#ff4c4c");
+    retosChannel.send(rechazarEmbed);
 }
 
 module.exports.help = {
