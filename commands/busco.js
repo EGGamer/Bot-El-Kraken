@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) =>
     .addField("Juego:", "Sea of Thieves", true)
     .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png")
     .setTimestamp()
-    .setColor("#d16a3a")
+    .setColor("#39efbf")
     .setAuthor(message.member.displayName, message.author.displayAvatarURL);
    
  
