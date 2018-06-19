@@ -36,7 +36,7 @@ bot.on("message", async message =>
     if(commandfile) commandfile.run(bot,message,args);
 
  
-});
+})
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
@@ -45,7 +45,7 @@ bot.on("ready", async =>{
     bot.user.setActivity("LOS KRUKEN CHANCLAS", {type: "WATCHING"});
     
     //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
-});
+})
 
 
 
