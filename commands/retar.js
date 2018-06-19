@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) =>
 
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
-    retosChannel.send(`<@${message.author.id} ha retado a ${founder} a jugar a ${juego}`);
+    retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
 
 module.exports.help = {
