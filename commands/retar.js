@@ -98,7 +98,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("LKC FOUNDER RETADO:", `${founder}`, true)
         .setTimestamp()
         .setThumbnail("https://savepoint.es/wp-content/uploads/2014/11/ikl0Si.png")
-        .setColor("#f49d41");
+        .setColor("#f4e542");
         retosChannel.send(retarLolEmbed);
 
     };

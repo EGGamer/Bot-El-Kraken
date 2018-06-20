@@ -3,7 +3,10 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //aceptarReto @elRetador juego
-    
+    let author = message.author;
+    let founderRole = message.guild.roles.find(`name`, "LKC Founder");
+
+    if(author.roles.has(founderRole)){
     let retador = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args.join(" ").slice(22)
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
@@ -18,7 +21,8 @@ module.exports.run = async (bot, message, args) =>
     .setColor("#4cff4f");
     retosChannel.send(aceptarEmbed);
 }
-
+}
+    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!")
 module.exports.help = {
     name: "aceptarReto"
 }
