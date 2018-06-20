@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
-{ message.delete();
+{ 
     let author = message.author;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
-    
+
     if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
     if(author.roles.has(founderRole)){
     let anunciosChannel = message.guild.channels.find(`name`, "anuncios-server");
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) =>
    
     anunciosChannel.send(embed)
     anunciosChannel.send("<@everyone>");
-    
+    message.delete();
 }
 }
 
