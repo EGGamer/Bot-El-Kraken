@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, args) =>
     let author = message.author;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
 
+    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
     if(author.roles.has(founderRole)){
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("No se ha podido encontrar al usuariio");
@@ -29,7 +30,7 @@ module.exports.run = async (bot, message, args) =>
     incidentsChannel.send(banEmbed);
 }
 }
-if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
+
 module.exports.help = {
     name: "ban"
 }
