@@ -69,7 +69,7 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
         .setColor("#ff8300");
-        retosChannel.send(retarFtEmbed);
+        retosChannel.send(retarOwEmbed);
 
     };
     if(juego === "ft"){
@@ -84,7 +84,7 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
         .setColor("#7e00fc");
-        retosChannel.send(retarOwEmbed);
+        retosChannel.send(retarFtEmbed);
 
     };
     if(juego === "lol"){
