@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp();
    
     anunciosChannel.send(embed)
-    
+    anunciosChannel.send("@everyone");
     
 }
 

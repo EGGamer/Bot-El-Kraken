@@ -10,7 +10,8 @@ module.exports.run = async (bot, message, args) =>
     .setThumbnail("https://cdn.discordapp.com/avatars/454682928769663007/14ac96f716c195bf55d7373778bd092c.png")
     .setTimestamp();
    
-    anunciosChannel.send(embed)
+    anunciosChannel.send(embed);
+    anunciosChannel.send("@everyone");
     
     
 }
