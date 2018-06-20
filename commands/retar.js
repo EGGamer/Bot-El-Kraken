@@ -67,7 +67,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("RETADOR:", `<@${message.author.id}>`, true)
         .addField("LKC FOUNDER RETADO:", `${founder}`, true)
         .setTimestamp()
-        .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
+        .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
         .setColor("#ff8300");
         retosChannel.send(retarOwEmbed);
 
@@ -82,7 +82,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("RETADOR:", `<@${message.author.id}>`, true)
         .addField("LKC FOUNDER RETADO:", `${founder}`, true)
         .setTimestamp()
-        .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
+        .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
         .setColor("#7e00fc");
         retosChannel.send(retarFtEmbed);
 
