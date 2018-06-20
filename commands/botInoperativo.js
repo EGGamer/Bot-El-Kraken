@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) =>
     message.delete();
 }
 }
-if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
+
 module.exports.help = {
     name: "botinoperativo"
 }
