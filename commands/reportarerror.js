@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
-    let error = args.join(" ").slice(22);
+    let error = args;
     
     let errorReportEmbed = new Discord.RichEmbed()
     .setTitle("ERROR REPORTADO")
