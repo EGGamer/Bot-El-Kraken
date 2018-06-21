@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>
 {// Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     let author = message.member;
-    let devBotRole = message.guild.roles.find(`name`, "DEV BOT");
+    let devBotRole = message.guild.roles.find(`name`, "DEV-BOT");
 
     
     if(author.roles.has(devBotRole.is)){
