@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-let chanclas = require("./chanclas.json");
+let chanclas = require("../chanclas.json");
 
 module.exports.run = async (bot, message, args) => {
     if(!chanclas[message.author.id]){
