@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 { 
-    //let author = message.author.id;
+    let author = message.member;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
-    //if(!message.author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
-    if(message.author.roles.has(founderRole)){
+    if(!message.author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
+    if(author.roles.has(founderRole)){
     let anunciosChannel = message.guild.channels.find(`name`, "anuncios-server");
     let embed = new Discord.RichEmbed()
     .setColor("#f85959")
