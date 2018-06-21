@@ -48,7 +48,7 @@ bot.on("message", async message => {
       });
 
     let coinEmbed = new Discord.RichEmbed()
-    .setAuthor(message.author.id)
+    .setAuthor(message.author)
     .setColor("#0000FF")
     .addField("💸", `¡${coinAmt} chanclas añadidas!`)
     message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
