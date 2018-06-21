@@ -47,11 +47,11 @@ bot.on("message", async message => {
         if (err) console.log(err)
       });
 
-    let coinEmbed = new Discord.RichEmbed()
-    .setAuthor(message.member.username)
-    .setColor("#0aaf33")
-    .addField("💸", `¡${coinAmt} chanclas añadidas!`)
-    message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+   // let coinEmbed = new Discord.RichEmbed()
+   // .setAuthor(message.member.username)
+    //.setColor("#0aaf33")
+    //.addField("💸", `¡${coinAmt} chanclas añadidas!`)
+   // message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
