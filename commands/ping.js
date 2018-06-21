@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) =>
     let devBotRole = message.guild.roles.find(`name`, "DEV BOT");
 
     
-    if(author.roles.has(devBotRole)){
+    if(author.roles.has(devBotRole.is)){
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`);
     if(!author.roles.has(devBotRole)) return message.reply("¿para qué quieres ejecutar ese comando? ¡No puede hacerlo si no eres uno de mis desarrolladores! ;)");
