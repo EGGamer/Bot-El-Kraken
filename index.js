@@ -41,7 +41,7 @@ bot.on("message", async message => {
     
       if(coinAmt === baseAmt){
         chanclas[message.author.id] = {
-          chanclas: chanclas[message.author.id].coins + coinAmt
+          chanclas: chanclas[message.author.id].chanclas + coinAmt
         }};
       fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
         if (err) console.log(err)
