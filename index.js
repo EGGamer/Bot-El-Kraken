@@ -23,40 +23,37 @@ fs.readdir("./commands/", (err, files) =>{
 
 })
 
-bot.on("message", async message =>
-{
+bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-
+  
     let prefix = botconfig.prefix;
- 
+
     if(!chanclas[message.author.id]){
         chanclas[message.author.id] = {
-            chanclas = 0
+          chanclas: 0
         };
-    }
-
-    let coinAmt = Math.floor(Math.random() * 15) + 1;
-    let baseAmt = Math.floor(Math.random() * 15) + 1;
-    console.log(`${coinAmt} ; ${baseAmt}`);
-    if(coinAmt === baseAmt){
+      }
+    
+      let coinAmt = Math.floor(Math.random() * 15) + 1;
+      let baseAmt = Math.floor(Math.random() * 15) + 1;
+      console.log(`${coinAmt} ; ${baseAmt}`);
+    
+      if(coinAmt === baseAmt){
         chanclas[message.author.id] = {
-            coins: coins[message.author.id].chanclas + coinAmt
+          chanclas: chanclas[message.author.id].coins + coinAmt
         };
-    fs.writeFile("./coins.json", JSON.stringify(chanclas), (err) => {
-        if(err) console.log(err)
-    });
-    }
+      fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+        if (err) console.log(err)
+      });
 
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot,message,args);
-
-   
-})
+  
+  });
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
