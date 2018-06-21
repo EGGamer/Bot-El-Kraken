@@ -3,12 +3,15 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //aceptarReto @elRetador juego
-    
+    let author = message.member;
+    let founderRole = message.guild.roles.find(`name`, "LKC Founder");
+
     let retador = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args.join(" ").slice(22)
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
-
+    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
+    if(author.roles.has(founderRole)){
     
     let rechazarEmbed = new Discord.RichEmbed()
     .setTitle("RETO RECHAZADO")
@@ -18,7 +21,7 @@ module.exports.run = async (bot, message, args) =>
     .setColor("#ff4c4c");
     retosChannel.send(rechazarEmbed);
 }
-
+}
 module.exports.help = {
     name: "rechazarReto"
 }

@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
-{
+{   let author = message.member;
+    let founderRole = message.guild.find(`name`, "LKC Founder");
+
+    if(!author.roles.has(founderRole)) return message.reply(`name`, "LKC Founder");
+    if(author.roles.has(founderRole)){
     message.delete();
         var repsSotEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
@@ -20,7 +24,7 @@ module.exports.run = async (bot, message, args) =>
     
     repsChannel.send(repsSotEmbed);
 }
-
+}
 module.exports.help = {
     name: "repSot"
 }
