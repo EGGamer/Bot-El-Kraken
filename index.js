@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 bot.commands = new Discord.Collection();
-let chanclas = require("./coins.json");
+let chanclas = require("./chanclas.json");
 
 fs.readdir("./commands/", (err, files) =>{
     if(err) console.log(err);
