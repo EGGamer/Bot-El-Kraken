@@ -1,16 +1,16 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
-{   let author = message.member;
-    let founderRole = message.guild.find(`name`, "LKC Founder");
+{   let author = message.author;
+    //let founderRole = message.guild.find(`name`, "LKC Founder");
 
-    if(!author.roles.has(founderRole)) return message.reply(`name`, "LKC Founder");
-    if(author.roles.has(founderRole)){
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     message.delete();
         var repsSotEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
-        .addField("EG Gamer", "**38**, **39**, **38**, **2**")
+        .addField("EG Gamer", "**38**, **40**, **39**, **2**")
         .addField("Hyren", "**38**, **40**, **38**, **2**")
         .addField("Fran", "**30**, **28**, **27**, **1**")
         .addField("Carlis", "**?**, **?**, **?**, **0**")

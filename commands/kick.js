@@ -10,8 +10,9 @@ module.exports.run = async (bot, message, args) =>
     let kReason = args.join(" ").slice(22)
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No puedo hacerlo");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Esa persona no puede ser kickeada");
-    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
-    if(author.roles.has(founderRole)){
+  
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kickeado~")
     .setColor("#f44141")

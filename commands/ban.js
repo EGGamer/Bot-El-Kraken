@@ -5,8 +5,9 @@ module.exports.run = async (bot, message, args) =>
     let author = message.member;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
 
-    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
-    if(author.roles.has(founderRole)){
+  
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("No se ha podido encontrar al usuariio");
     let bReason = args.join(" ").slice(22)

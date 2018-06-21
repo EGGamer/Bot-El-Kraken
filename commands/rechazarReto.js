@@ -10,9 +10,8 @@ module.exports.run = async (bot, message, args) =>
     let juego = args.join(" ").slice(22)
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
-    if(!author.roles.has(founderRole)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
-    if(author.roles.has(founderRole)){
-    
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     let rechazarEmbed = new Discord.RichEmbed()
     .setTitle("RETO RECHAZADO")
     .setDescription(`<@${message.author.id}> ha rechazado el reto de ${retador}. El juego era ${juego}.`)

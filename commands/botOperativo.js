@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, args) =>
     let author = message.member;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
 
-    if(!author.roles.has(founderRole.id)) return message.reply("¡No tienes permiso para ejecutar ese comando!");
-    if(author.roles.has(founderRole.id)){
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     let anunciosChannel = message.guild.channels.find(`name`, "anuncios-server");
     let embed = new Discord.RichEmbed()
     .setColor("#59ff3f")

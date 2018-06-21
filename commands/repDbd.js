@@ -4,8 +4,8 @@ module.exports.run = async (bot, message, args) =>
 {   let author = message.member;
     let founderRole = message.guild.find(`name`, "LKC Founder");
 
-    if(!author.roles.has(founderRole)) return message.reply(`name`, "LKC Founder");
-    if(author.roles.has(founderRole)){
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     message.delete();
         var repsDbDEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
