@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 bot.commands = new Discord.Collection();
+let cooldown = new Set();
+let cdseconds = 5;
 
 fs.readdir("./commands/", (err, files) =>{
     if(err) console.log(err);
@@ -27,6 +29,15 @@ bot.on("message", async message =>
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
+    if(!message.content.startsWith(prefix)) return;
+    if(cooldown.has(message.author.id)){
+        message.delete();
+        message.reply("¡Has escrito el comando muy rápido! Debes esperar **5 segundos** para poder poner otro comando.")
+    }
+    if(!message.member.hasPermission("ADMINISTRATOR"))
+    {
+       cooldown.add(message.author.id);
+    }
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -35,7 +46,9 @@ bot.on("message", async message =>
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot,message,args);
 
- 
+    setTimeout(() => {
+        cooldown.delete(message.author.id)
+    }, cdseconds * 1000)
 })
 
 bot.on("ready", async =>{
