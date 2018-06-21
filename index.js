@@ -10,7 +10,7 @@ fs.readdir("./commands/", (err, files) =>{
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0){
-        conslo.log("No se hna podido encontar comandos");
+        conslo.log("No se han podido encontar comandos");
         return;
     }
 
