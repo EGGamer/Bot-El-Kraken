@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) =>
     //k-avisoTwitch <usuario> || Usuario: Carlis, EG
     let usuario = args[1];
     
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("¡No tienes permiso para hacer eso!");
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("¡No tienes permiso para hacer eso!");
 
     if(usuario === "carlis"){
         let carlisTwEmbed = new Discord.RichEmbed()
