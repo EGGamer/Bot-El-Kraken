@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>
 { 
     //k-avisoTwitch <usuario> || Usuario: Carlis, EG
     let usuario = args;
-    
+    console.log(usuario);
   //  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("¡No tienes permiso para hacer eso!");
 
     if(usuario === "carlis"){
