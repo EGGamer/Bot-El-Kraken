@@ -10,6 +10,8 @@ module.exports.run = async (bot, message, args) =>
     if(usuario === "carlis"){
         let carlisTwEmbed = new Discord.RichEmbed()
         .setTitle("¡Carlis104 está en directo!")
+        .setDescription("test")
+        .addField("test", "test");
        // .setURL("https://www.twitch.tv/carlis104");
         message.channel.send(carlisTwEmbed);
     }
