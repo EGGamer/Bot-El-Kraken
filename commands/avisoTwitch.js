@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 { 
     //k-avisoTwitch <usuario> || Usuario: Carlis, EG
-    let usuario = args;
+    let usuario = args[1];
     console.log(usuario);
   //  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("¡No tienes permiso para hacer eso!");
 
