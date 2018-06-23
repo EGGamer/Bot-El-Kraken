@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //k-sugerir <Sugerencia>
-    let sugerencia = args.join(" ").slice(22)
+    let sugerencia = args;
     let sugChannel = message.guild.channels.find(`name`, "sugerencias");
     console.log(sugerencia);
     
@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) =>
     .setThumbnail(message.guild.iconURL)
     .setAuthor(message.member.displayName, message.author.displayAvatarURL)
     .setFooter(`ID: ${message.author.id}`)
-    .setTimestamp();
+    .setTimestamp()
+    .setColor("#f4e242");
 
     sugChannel.send(sugEmbed);
 }
