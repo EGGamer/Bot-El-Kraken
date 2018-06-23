@@ -5,9 +5,9 @@ module.exports.run = async (bot, message, args) =>
     //k-sugerir <Sugerencia>
     let sugerencia = args.join(" ").slice(22);
     let sugChannel = message.guild.channels.find(`name`, "sugerencias");
+    console.log(sugerencia);
     
-    if(!sugerencia) return message.reply("¡Debes describir la sugerencia!");
-    
+
     let sugEmbed = new Discord.RichEmbed()
     .setTitle("SUGERENCIA")
     .setDescription(`¡<@${message.author.id}> ha enviado una sugerencia!`)
