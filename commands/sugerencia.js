@@ -10,8 +10,7 @@ module.exports.run = async (bot, message, args) =>
 
     let sugEmbed = new Discord.RichEmbed()
     .setTitle("SUGERENCIA")
-    .setDescription(`¡<@${message.author.id}> ha enviado una sugerencia!`)
-    .addField("Sugerencia:", `${sugerencia}`)
+    .setDescription(`¡<@${message.author.id}> ha enviado una sugerencia!: ${sugerencia}`)
     .setThumbnail(message.guild.iconURL)
     .setAuthor(message.member, message.member.avatarURL)
     .setFooter(`ID: ${message.author.id}`)
