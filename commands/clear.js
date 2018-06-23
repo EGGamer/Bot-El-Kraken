@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
-    let author = message.author;
+    let author = message.member;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
 
    
