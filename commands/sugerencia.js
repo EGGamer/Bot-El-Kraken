@@ -19,6 +19,9 @@ module.exports.run = async (bot, message, args) =>
 
     message.delete(1000);
     sugChannel.send(sugEmbed);
+    const msg = await sugChannel.send(sugChannel);
+    await msg.react(`✔`);
+    await msg.react(`❌`);
 }
 module.exports.help = {
     name: "sugerir"
