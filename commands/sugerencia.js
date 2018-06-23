@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) =>
     .setColor("#f4e242");
 
     message.delete(1000);
-    sugChannel.send(sugEmbed);
-    const msg = await sugChannel.send(sugChannel);
+    //sugChannel.send(sugEmbed);
+    const msg = await sugChannel.send(sugEmbed);
     await msg.react(`✔`);
     await msg.react(`❌`);
 }
