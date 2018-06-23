@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) =>
 {
     //k-sugerir <Sugerencia>
-    let sugerencia = args.join(" ").slice(22);
+    let sugerencia = args.join(" ").slice(1);
     let sugChannel = message.guild.channels.find(`name`, "sugerencias");
     console.log(sugerencia);
     
