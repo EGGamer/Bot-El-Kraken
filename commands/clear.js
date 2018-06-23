@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
-    let author = message.member;
+    let author = message.content.slice(config.prefix.length).trim().split(/ +/g);;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
 
    
