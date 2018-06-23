@@ -1,7 +1,7 @@
-/*const Discord = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
-{
+{/*
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args.join(" ").slice(22)
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
@@ -117,9 +117,9 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarCsgoEmbed);
 
     };
-   // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
+   // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);*/
 }
 
 module.exports.help = {
     name: "retar"
-}*/
+}
