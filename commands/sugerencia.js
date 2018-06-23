@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp()
     .setColor("#f4e242");
 
+    message.delete(1000);
     sugChannel.send(sugEmbed);
 }
 module.exports.help = {
