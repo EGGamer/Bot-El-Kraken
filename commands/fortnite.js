@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const config = require("../botconfig.json");
-const apikey = require("../keys.json");
+const apikey = require("../keysFt.json");
 const Fortnite = require("fortnite");
 const ft = new Fortnite(apikey.Fortnite);
 
