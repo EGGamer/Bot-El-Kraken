@@ -4,8 +4,8 @@ module.exports.run = async (bot, message, args) =>
 {   let author = message.member;
     
 
-    //if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
-    //if(author.hasPermission("ADMINISTRATOR")){
+    if(!author.hasPermission("ADMINISTRATOR")) return message.reply("¡No puede ejecutar ese comando!");
+    if(author.hasPermission("ADMINISTRATOR")){
     message.delete();
         var repsDbDEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) =>
     
     repsChannel.send(repsDbDEmbed);
 }
-//}
+}
 module.exports.help = {
     name: "repdbd"
 }
