@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
-{
+{/*
     //aceptarReto @elRetador juego
     let author = message.member;
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp()
     .setColor("#4cff4f");
     retosChannel.send(aceptarEmbed);
-}
+}*/
 }
     
 module.exports.help = {
