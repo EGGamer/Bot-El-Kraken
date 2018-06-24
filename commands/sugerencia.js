@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>
 {
     //k-sugerir <Sugerencia>
     let sugerencia = message.content;
-    let sugChannel = message.guild.channels.find(`name`, "sugerencias");
+    let sugChannel = message.guild.channels.find(`name`, "r-i-s");
     console.log(sugerencia);
     
 

@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) =>
 
 
 
-    let reportChannel = message.guild.channels.find(`name`, "reportes");
+    let reportChannel = message.guild.channels.find(`name`, "r-i-s");
     if(!reportChannel) return message.channel.send("No he podido encontrar el canal de reportes");
 
     message.delete().catch(O_o=>{});

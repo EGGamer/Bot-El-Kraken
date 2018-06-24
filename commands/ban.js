@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) =>
     .addField("Baneado en", message.channel)
     .addField("Razón", bReason);
 
-    let incidentsChannel = message.guild.channels.find(`name`, "incidentes");
+    let incidentsChannel = message.guild.channels.find(`name`, "r-i-s");
     if(!incidentsChannel) return message.channel.send("No he podido encontrar el canal de incidentes");
     
     message.guild.member(bUser).ban(bReason);
