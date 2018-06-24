@@ -23,6 +23,10 @@ fs.readdir("./commands/", (err, files) =>{
 
 });
 
+bot.on("serverNewMember", (server, user) => {
+    bot.sendMessage(`¡${user} bienvenido a ${server.name}! Soy El Kraken, el bot supremo del servidor. Te recomiendo leer este documento: http://bit.ly/lkcserver . Ahí encontrarrás la información completa sobre el servidor. también lo encontrarás en el canal #información del servidor. Esperamos que disfrutes del servidor. 😉`);
+});
+
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
