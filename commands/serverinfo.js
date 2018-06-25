@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) =>
     .addField("Miembros totales", message.guild.memberCount);  
 
     message.channel.send(serverembed);
+    message.delete();
 }
 
 module.exports.help = {

@@ -18,11 +18,12 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp()
     .setColor("#f4e242");
 
-    message.delete(1000);
+    message.delete();
     //sugChannel.send(sugEmbed);
     const msg = await sugChannel.send(sugEmbed);
     await msg.react(`✔`);
     await msg.react(`❌`);
+
 }
 module.exports.help = {
     name: "sugerir"

@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) =>
     message.channel.bulkDelete(args[0]).then(() => {
         message.channel.send(`Eliminados ${args[0]} mensajes`).then(msg => msg.delete(5000));
     }); 
+    message.delete();
 }
 }
 module.exports.help = {

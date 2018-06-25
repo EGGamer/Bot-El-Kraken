@@ -23,6 +23,7 @@ module.exports.run = async (bot, message, args) =>
     if(!repsChannel) return message.channel.send("No he podido encontrar el canal de reputaciones");
     
     repsChannel.send(repsDbDEmbed);
+    message.delete();
 }
 }
 module.exports.help = {

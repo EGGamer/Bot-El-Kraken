@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>
     if(author.hasPermission("ADMINISTRATOR")){
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! La latencia es ${m.createdTimestamp - message.createdTimestamp}ms. La latencia de la API es ${Math.round(bot.ping)}ms`);
-    
+    message.delete();
 }
 }
 module.exports.help = {

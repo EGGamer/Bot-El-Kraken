@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) =>
     
 
    message.channel.send(botembed);
+   message.delete();
 }
 
 module.exports.help = {

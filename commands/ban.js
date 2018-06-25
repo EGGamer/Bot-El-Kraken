@@ -29,6 +29,7 @@ module.exports.run = async (bot, message, args) =>
     
     message.guild.member(bUser).ban(bReason);
     incidentsChannel.send(banEmbed);
+    message.delete();
 }
 }
 

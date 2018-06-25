@@ -27,6 +27,7 @@ module.exports.run = async (bot, message, args) =>
     
     message.guild.member(kUser).kick(kReason);
     incidentsChannel.send(kickEmbed);
+    message.delete();
 }
 }
 module.exports.help = {

@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
+    message.delete();
     message.channel.send(`<@${message.author.id}> aquí tienes todo lo que puedo hacer:`);
     let ayudaEmbed = new Discord.RichEmbed()
     .setTitle("¿NECESITAS AYUDA?")
