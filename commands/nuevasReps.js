@@ -33,6 +33,7 @@ module.exports.run = async (bot, message, args) =>
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");
     if(!repsChannel) return message.channel.send("No he podido encontrar el canal de reputaciones");
+    repsChannel.bulkDelete(10);
     repsChannel.send(repsDbDEmbed);
     repsChannel.send(repsSotEmbed);
     message.delete();
