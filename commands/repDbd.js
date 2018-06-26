@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("EG Gamer", "**RANGOS**: Survivor: *16* , Killer: *19* | **LVL JUGADOR**: *15*")
         .addField("Hyren", "**RANGOS**: Survivor: *15* , Killer: *20* | **LVL JUGADOR**: *17*")
         .addField("Fran", "**RANGOS**: Survivor: *?* , Killer: *?* | **LVL JUGADOR**: *?*")
-        .addField("Carlis", "**RANGOS**: Survivor: *?* , Killer: *?* | **LVL JUGADOR**: *?*")
+        .addField("Carlis", "**RANGOS**: Survivor: *?* , Killer: *?* | **LVL JUGADOR**: *7*")
         .addField("Cutu", "**RANGOS**: Survivor: *19* , Killer: *18* | **LVL JUGADOR**: *13*")
         .setColor("#e8e8e8")
         .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
