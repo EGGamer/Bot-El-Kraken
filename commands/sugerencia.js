@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) =>
 {
+    message.reply("Hemos recibido tu sugerencia. ¡Gracias! :smiley: ")
     //k-sugerir <Sugerencia>
     let sugerencia = message.content;
     let sugChannel = message.guild.channels.find(`name`, "r-i-s");
@@ -20,6 +21,7 @@ module.exports.run = async (bot, message, args) =>
 
     message.delete();
     //sugChannel.send(sugEmbed);
+    sugChannel.send("[<@&449914515119931392>]")
     const msg = await sugChannel.send(sugEmbed);
     await msg.react(`✔`);
     await msg.react(`❌`);
