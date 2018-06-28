@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) =>
     let nota = args;
 
     if(!nota) return message.channel.send(`¡<@${message.author.id}> se ha suicidado 😮! DEP 💀 <@${message.author.id}> 💀`);
-    if(nota) return message.channel.send(`¡<@${message.author.id}> se ha suicidado 😮!` +  " Nos ha dejado una nota: " + `${nota}` + ` DEP 💀 <@${message.author.id}> 💀`);
+    if(nota) return message.channel.send(`¡<@${message.author.id}> se ha suicidado 😮!` +  " Nos ha dejado una nota: " + `**${nota}**` + ` DEP 💀 <@${message.author.id}> 💀`);
     message.delete();
 }
 
