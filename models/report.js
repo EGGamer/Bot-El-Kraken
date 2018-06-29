@@ -1,7 +1,7 @@
 const Mongoose = require("mongoose");
 
 const reportSchema = Mongoose.Schema({
-    _id: Mongoose.Types.ObjectId,
+    //_id: Mongoose.Types.ObjectId,
     username: String,
     userID: String,
     reason: String,
