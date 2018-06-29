@@ -10,4 +10,4 @@ const reportSchema = Mongoose.Schema({
     Time: String
 });
 
-module.exports = Mongoose.module("Report", reportSchema);
+module.exports = Mongoose.model("Report", reportSchema);
