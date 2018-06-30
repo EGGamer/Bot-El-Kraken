@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
               console.log('The raw response from Mongo was ', raw);
             });
     
-        Chancla.save();
+        
         
     }
     
