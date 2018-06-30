@@ -5,8 +5,8 @@ const reportSchema = Mongoose.Schema({
     username: String,
     userID: String,
     reason: String,
-    reportedBy: String,
-    reportedByID: String,
+    rUsername: String,
+    rID: String,
     Time: String
 });
 
