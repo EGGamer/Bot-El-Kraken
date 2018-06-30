@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) =>
         .setTitle("Reputaciones Actuales")
         .addField("EG Gamer", "**RANGOS**: Survivor: *16* , Killer: *19* | **LVL JUGADOR**: *15*")
         .addField("Hyren", "**RANGOS**: Survivor: *15* , Killer: *20* | **LVL JUGADOR**: *17*")
-        .addField("Fran", "**RANGOS**: Survivor: *?* , Killer: *17* | **LVL JUGADOR**: *17*")
+        .addField("Fran", "**RANGOS**: Survivor: *17* , Killer: *17* | **LVL JUGADOR**: *17*")
         .addField("Carlis", "**RANGOS**: Survivor: *?* , Killer: *?* | **LVL JUGADOR**: *7*")
         .addField("Cutu", "**RANGOS**: Survivor: *19* , Killer: *18* | **LVL JUGADOR**: *13*")
         .setColor("#e8e8e8")
