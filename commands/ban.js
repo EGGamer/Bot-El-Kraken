@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) =>
     if(author.hasPermission("ADMINISTRATOR")){
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("No se ha podido encontrar al usuariio");
-    let bReason = args.join(" ").slice(22)
+    let bReason = args.slice(1).join(" ");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No puedo hacerlo");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Esa persona no puede ser baneada");
 
