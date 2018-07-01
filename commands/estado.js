@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) =>
     message.delete();
     if(!argus === "restart"){        
         bot.user.setActivity(`${argus} | ${botconfig.version}`);
-    }else {    
+    }else if(argus === "restart"){    
         bot.user.setActivity(`LOS KRUKEN CHANCLAS | ${botconfig.version}`, {type: "WATCHING"});
         }
 console.log(argus);
