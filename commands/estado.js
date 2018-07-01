@@ -6,12 +6,12 @@ module.exports.run = async (bot, message, args) =>
     let argus = args.join(" ");
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No voy a dejar de hacer lo que estoy haciendo.");
     message.delete();
-    if(argus === "restart"){
+    if(!argus === "restart"){        
+        bot.user.setActivity(`${argus} | ${botconfig.version}`);
+    }else {    
         bot.user.setActivity(`LOS KRUKEN CHANCLAS | ${botconfig.version}`, {type: "WATCHING"});
-    }else {
-    bot.user.setActivity(`${args} | ${botconfig.version}`);
-    console.log(argus);
-}
+        }
+console.log(argus);
 }
 
 module.exports.help = {
