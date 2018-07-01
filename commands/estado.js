@@ -3,7 +3,7 @@ const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) =>
 {
-    let argus = args.join(" ");
+    let argus = args.slice(0).join(" ");
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No voy a dejar de hacer lo que estoy haciendo.");
     message.delete();
     if(argus === "restart"){
