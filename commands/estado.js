@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) =>
         bot.user.setActivity(`LOS KRUKEN CHANCLAS | ${botconfig.version}`, {type: "WATCHING"});
     }else {
     bot.user.setActivity(`${args} | ${botconfig.version}`);
+    console.log(args);
 }
 }
 
