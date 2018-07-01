@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>
 {
     message.reply("Hemos recibido tu sugerencia. ¡Gracias! :smiley: ")
     //k-sugerir <Sugerencia>
-    let sugerencia = args.slice(1).join(" ");;
+    let sugerencia = args.slice(0).join(" ");;
     let sugChannel = message.guild.channels.find(`name`, "r-i-s");
     console.log(sugerencia);
     
