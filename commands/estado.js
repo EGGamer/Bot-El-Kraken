@@ -3,7 +3,7 @@ const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) =>
 {
-    let argus = args[1].join(" ");
+    let argus = args.join(" ");
     let type = args[0];
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No voy a dejar de hacer lo que estoy haciendo.");
     message.delete();
