@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>
     let embed = new Discord.RichEmbed()
     .setColor("#f4e542")
     .setTitle("BOT EN MANTENIMIENTO")
-    .setDescription("Estamos haciendo mantinimiento del bot y/o programando al mismo. Puede que esté caído por algunos momentos.")
+    .setDescription("Estamos haciendo mantenimiento del bot y/o programando al mismo. Puede que esté caído por algunos momentos.")
     .setThumbnail("https://cdn.discordapp.com/avatars/454682928769663007/14ac96f716c195bf55d7373778bd092c.png")
     .setTimestamp();
    
