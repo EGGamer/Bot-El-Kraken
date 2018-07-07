@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) =>
     message.delete();
     let ganadorEmbed = new Discord.RichEmbed()
     .setTitle("GANADOR DE EL MAESTRO DE LOS CHISTES")
-    .setDescription(`¡${User} ha ganado el concurso de **El Maestro de los Chistes**!`)
+    .setDescription(`¡${User} ha ganado el concurso de **El Maestro de los Chistes** con el siguiente chiste!`)
     .setAuthor(User)
     .setTimestamp()
     .setFooter("¡Enhorabuena!")
