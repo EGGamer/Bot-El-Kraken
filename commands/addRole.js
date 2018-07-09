@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) =>
     console.log(testRojorol.id);
     if(args === "rojo"){
         if(rMember.roles.has(testRojorol.id));
-        await(rMember.addRole(testRojorol.id));}
+        await(rMember.addRole(testRojorol.id));
     }
 
     try {
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) =>
     message.channel.send(`<@${rMember}> tiene el rol <@${testRojorol.name}>. Tiene los DM's desactivados.`);
     
 }
-
+}
 
 module.exports.help = {
     name: "añadirrol"
