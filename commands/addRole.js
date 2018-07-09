@@ -1,7 +1,7 @@
-/*const Discord = require("discord.js");
+const Discord = require("discord.js");
 const botconfig = require("../botconfig.json")
 module.exports.run = async (bot, message, args) =>
-{
+{/*
     let rMember = message.guild.member;
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("¡Especifica un rol!");
@@ -15,10 +15,10 @@ module.exports.run = async (bot, message, args) =>
         rMember.send(`Felicidades, te he otorgado el rol ${gRole.name}`)
     }catch(e){
     message.channel.send(`<@${rMember}> tiene el rol ${gRole.name}. Tiene los DM's desactivados.`);
+    */
 }
-}
+//}
 
 module.exports.help = {
     name: "añadirrol"
 }
-*/
