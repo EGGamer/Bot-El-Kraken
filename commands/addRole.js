@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) =>
     console.log(testRojorol);
     console.log(testRojorol.id);
     if(args === "rojo"){
-        if(rMember.roles.has(testRojorol.id));
+        if(rMember.roles.has(testRojorol.id)) return;
         await(rMember.addRole(testRojorol.id));
     }
 
