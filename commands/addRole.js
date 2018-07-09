@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json")
 module.exports.run = async (bot, message, args) =>
 {
-    let rMember = message.guild.member;
+    let rMember = message.guild.user;
     let role = args;
     if(!role) return message.reply("¡Especifica un rol!");
     let testRojorol = message.guild.roles.find(`name`, "ROL TEST 1");
