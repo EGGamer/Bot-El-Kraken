@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("../botconfig.json")
 module.exports.run = async (bot, message, args) =>
-{
+{/*
     let rMember = message.member.user;
     let role = args;
     if(!role) return message.reply("¡Especifica un rol!");
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) =>
     }catch(e){
     message.channel.send(`${rMember} tiene el rol <@${testRojorol.name}>. Tiene los DM's desactivados.`);
     
-}
+}*/
 }
 
 module.exports.help = {
