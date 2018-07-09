@@ -13,8 +13,9 @@ module.exports.run = async (bot, message, args) =>
 
     try {
         rMember.send(`Felicidades, te he otorgado el rol ${gRole.name}`)
-    }catch(e)
-    message.channel.send(`${rMember} tiene el rol ${gRole.name}. Tiene los DM's desactivados.`);
+    }catch(e){
+    message.channel.send(`<@${rMember}> tiene el rol ${gRole.name}. Tiene los DM's desactivados.`);
+}
 }
 
 module.exports.help = {
