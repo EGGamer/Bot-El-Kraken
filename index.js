@@ -42,7 +42,8 @@ bot.on("ready", async =>{
     console.log(`${bot.user.username} está online!`);
     //let canalBot = message.guild.channels.find(`name`, "cambios-bot");
     //canalBot.send("Estoy activo");
-    bot.user.setActivity(`LOS KRUKEN CHANCLAS | ${botconfig.version}`, {type: "WATCHING"});
+  //  bot.user.setActivity(`LOS KRUKEN CHANCLAS | ${botconfig.version}`, {type: "WATCHING"});
+    bot.user.setActivity(`EN MANTENIMIENTO`);
     
     //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
 })
