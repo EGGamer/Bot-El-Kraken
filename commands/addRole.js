@@ -10,13 +10,13 @@ module.exports.run = async (bot, message, args) =>
         member.addRole(testRojorol).catch(console.error);
     }
     
-    try {
+  /*  try {
        await member.send(`Felicidades, te he otorgado el rol ${testRojorol.name}`);
     }catch(e){
     message.channel.send(`${member} tiene el rol <@${testRojorol.name}>. Tiene los DM's desactivados.`);
-    
+    */
 }
-}
+//}
 
 module.exports.help = {
     name: "añadirrol"
