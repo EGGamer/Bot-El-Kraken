@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) =>
     let testRojorol = message.guild.roles.find(`name`, "ROL TEST 1");
     
     if(args === "rojo"){
-        if(member.roles.has(testRojorol)) return message.reply("¡Ya tienes ese rol!");
+        //if(member.roles.has(testRojorol)) return message.reply("¡Ya tienes ese rol!");
         member.addRole(testRojorol).catch(console.error);
     }
     
