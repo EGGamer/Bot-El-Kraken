@@ -47,7 +47,9 @@ bot.on("ready", async =>{
     
     //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
 })
-
+bot.on('guildMemberAdd', member => {
+    member.send(`¡${member.name} bienvenido a Los Kruken Chanclas! Recuerda leer #información para informarte sobre el servidor. ;) `);
+});
 
 
 bot.login(process.env.token);
