@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) =>
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
         .addField("EG Gamer", "**42**, **45**, **41**, **2**")
-        .addField("Hyren", "**42**, **45**, **41**, **2**")
+        .addField("Hyren", "**43**, **45**, **41**, **2**")
         .addField("Fran", "**31**, **29**, **27**, **1**")
         .addField("Carlis", "**20**, **21**, **18**, **0**")
         .addField("Cutu", "**22**, **21**, **17**, **0**")
