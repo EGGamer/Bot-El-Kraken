@@ -49,6 +49,8 @@ bot.on("ready", async =>{
 })
 bot.on('guildMemberAdd', member => {
     member.send(`¡${member.user.username} bienvenido a Los Kruken Chanclas! Recuerda leer #información para informarte sobre el servidor. ;) `);
+    let miembroRole = message.guild.roles.find(`name`, "Miembros ﴾👥﴿");    
+    member.addRole(miembroRole).catch(console.error);
 });
 
 
