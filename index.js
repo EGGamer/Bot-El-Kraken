@@ -1,4 +1,4 @@
-/*const botconfig = require("./botconfig.json");
+const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
@@ -55,4 +55,3 @@ bot.on('guildMemberAdd', member => {
 
 
 bot.login(process.env.token);
-*/
