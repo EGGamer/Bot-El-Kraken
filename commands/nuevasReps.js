@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) =>
         .addField("Hyren", "**LVL JUGADOR**: *18*")
         .addField("Fran", "**LVL JUGADOR**: *18*")
         .addField("Carlis", "**LVL JUGADOR**: *7*")
-        .addField("Cutu", "****LVL JUGADOR**: *13*")
+        .addField("Cutu", "**LVL JUGADOR**: *13*")
         .setColor("#e8e8e8")
         .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
         .setFooter("¡ACTUALMENTE DESACTUALIZADO!");
