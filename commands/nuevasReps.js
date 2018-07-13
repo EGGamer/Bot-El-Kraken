@@ -23,13 +23,14 @@ module.exports.run = async (bot, message, args) =>
         var repsDbDEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
-        .addField("EG Gamer", "**RANGOS**: Survivor: *15* , Killer: *19* | **LVL JUGADOR**: *17*")
-        .addField("Hyren", "**RANGOS**: Survivor: *15* , Killer: *20* | **LVL JUGADOR**: *18*")
-        .addField("Fran", "**RANGOS**: Survivor: *16* , Killer: *17* | **LVL JUGADOR**: *18*")
-        .addField("Carlis", "**RANGOS**: Survivor: *?* , Killer: *?* | **LVL JUGADOR**: *7*")
-        .addField("Cutu", "**RANGOS**: Survivor: *19* , Killer: *18* | **LVL JUGADOR**: *13*")
+        .addField("EG Gamer", "**LVL JUGADOR**: *17*")
+        .addField("Hyren", "**LVL JUGADOR**: *18*")
+        .addField("Fran", "**LVL JUGADOR**: *18*")
+        .addField("Carlis", "**LVL JUGADOR**: *7*")
+        .addField("Cutu", "****LVL JUGADOR**: *13*")
         .setColor("#e8e8e8")
-        .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png");
+        .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
+        .setFooter("¡ACTUALMENTE DESACTUALIZADO!");
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");
     if(!repsChannel) return message.channel.send("No he podido encontrar el canal de reputaciones");
