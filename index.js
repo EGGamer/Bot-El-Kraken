@@ -25,7 +25,10 @@ fs.readdir("./commands/", (err, files) =>{
 
 bot.on("message", async message => {
     if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
+    if(message.channel.type === "dm") {
+        return message.reply("¡Hey no me hables por aquí!");
+        console.log(message);
+    };
   
     let prefix = botconfig.prefix; 
     
