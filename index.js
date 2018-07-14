@@ -26,7 +26,7 @@ fs.readdir("./commands/", (err, files) =>{
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-        console.log(message.content)
+        console.log(`Mensaje por DM recivido: ${message.content}`)
         return message.reply("¡Hey no me hables por aquí!")
         
     };
