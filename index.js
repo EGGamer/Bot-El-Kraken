@@ -30,7 +30,7 @@ bot.on("message", async message => {
         //return message.reply("¡Hey no me hables por aquí!")
         let embedTest = new Discord.RichEmbed()
         .setDescription(`¡Hey ${message.author.username} no me hables por aquí!`);
-        return message.send(embedTest);
+        return message.reply(embedTest);
         
     };
   
