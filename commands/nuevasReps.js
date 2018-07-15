@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) =>
         var repsSotEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
-        .addField("EG Gamer", "**44**, **46**, **42**, **2**")
+        .addField("EG Gamer", "**45**, **46**, **42**, **2**")
         .addField("Hyren", "**43**, **46**, **41**, **2**")
         .addField("Fran", "**31**, **29**, **27**, **1**")
         .addField("Carlis", "**20**, **21**, **18**, **0**")
