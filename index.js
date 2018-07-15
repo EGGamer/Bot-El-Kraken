@@ -27,7 +27,10 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
         console.log(`Mensaje por DM recivido: ${message.content}`)
-        return message.reply("¡Hey no me hables por aquí!")
+        //return message.reply("¡Hey no me hables por aquí!")
+        let embedTest = new Discord.RichEmbed()
+        .setDescription(`¡Hey ${message.author.username} no me hables por aquí!`);
+        return message.send(embedTest);
         
     };
   
