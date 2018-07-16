@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) =>
     
     //Si no es founder
   //  if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
-  console.log(juego);
+
     //Si es un juego elegible
     if(juego === "dbd"){
         
@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) =>
         const retoLKC = new Reto({
             retador: message.member.displayUsername,
             retadorID: message.author.id,
-            retado: founder.member.displayUsername,
+            retado: founder.displayUsername,
             juego: juego,
             tiempo: message.createdAt
         });
