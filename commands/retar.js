@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) =>
 
     //Si es un juego elegible
     if(juego === "dbd"){
+        console.log(juego);
         //Crear Embed y enviarlo.
         let retarDbDEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
