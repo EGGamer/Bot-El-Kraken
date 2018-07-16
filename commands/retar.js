@@ -13,7 +13,8 @@ module.exports.run = async (bot, message, args) =>
     
     //Si no es founder
   //  if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
-console.log(founder, juego);
+console.log(founder.user.username);
+console.log(juego);
     //Si es un juego elegible
     if(juego === "dbd"){
         
