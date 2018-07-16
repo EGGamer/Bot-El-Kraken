@@ -13,10 +13,10 @@ module.exports.run = async (bot, message, args) =>
     
     //Si no es founder
   //  if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
-
+  console.log(juego);
     //Si es un juego elegible
     if(juego === "dbd"){
-        console.log(juego);
+        
         //Crear Embed y enviarlo.
         let retarDbDEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
