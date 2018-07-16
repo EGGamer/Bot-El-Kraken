@@ -11,13 +11,14 @@ module.exports.run = async (bot, message, args) =>
         var repsSotEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
-        .addField("EG Gamer", "**45**, **46**, **42**, **2**")
+        .addField("EG Gamer", "**45**, **46**, **43**, **2**")
         .addField("Hyren", "**43**, **46**, **41**, **2**")
         .addField("Fran", "**31**, **29**, **27**, **1**")
         .addField("Carlis", "**20**, **21**, **18**, **0**")
         .addField("Cutu", "**22**, **21**, **17**, **0**")
         .setImage("https://i.imgur.com/ypara7v.png")
-        .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png");
+        .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png")
+        .setTimestamp();
         
     //EMBED DBD
         var repsDbDEmbed = new Discord.RichEmbed()
@@ -30,7 +31,8 @@ module.exports.run = async (bot, message, args) =>
         .addField("Cutu", "**LVL JUGADOR**: *13*")
         .setColor("#e8e8e8")
         .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
-        .setFooter("¡ACTUALMENTE DESACTUALIZADO!");
+        .setFooter("¡ACTUALMENTE DESACTUALIZADO!")
+        .setTimestamp();
     
         let repsChannel = message.guild.channels.find(`name`, "reputaciones-actuales");
     if(!repsChannel) return message.channel.send("No he podido encontrar el canal de reputaciones");
