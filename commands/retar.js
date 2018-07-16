@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) =>
             juego: juego,
             tiempo: message.createdAt
         });
-        report.save()
+        retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
 
