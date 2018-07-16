@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
+const Mongoose = require("mongoose");
+const Reto = require("../models/retadorLKC.js");
 
 module.exports.run = async (bot, message, args) =>
-{/*
+{   Mongoose.connect(process.env.MONGODB_URI);
+
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args.join(" ").slice(22)
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
@@ -13,6 +16,7 @@ module.exports.run = async (bot, message, args) =>
 
     //Si es un juego elegible
     if(juego === "dbd"){
+        //Crear Embed y enviarlo.
         let retarDbDEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Dead by Daylight se acordará una fecha para hacer la partida.")
@@ -25,7 +29,17 @@ module.exports.run = async (bot, message, args) =>
         .setThumbnail("http://deadbydaylight.com/images/logo_dbd.png")
         .setColor("#e8e8e8");
         retosChannel.send(retarDbDEmbed);
-
+        //Crear y enviar a la base de datos
+        const retoLKC = new Reto({
+            retador: message.author,
+            retadorID: message.author.id,
+            retado: founder,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        report.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
     if(juego === "sot"){
         let retarSotEmbed = new Discord.RichEmbed()
@@ -117,7 +131,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarCsgoEmbed);
 
     };
-   // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);*/
+   // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
 
 module.exports.help = {
