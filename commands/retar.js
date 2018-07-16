@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) =>
 {   Mongoose.connect(process.env.MONGODB_URI);
 
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let juego = args[1];
+    let juego = args(1);
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
@@ -43,6 +43,7 @@ module.exports.run = async (bot, message, args) =>
         .catch(err => console.log(err));
 
     };
+
     if(juego === "sot"){
         let retarSotEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
@@ -58,6 +59,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarSotEmbed);
 
     };
+
     if(juego === "rl"){
         let retarRlEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
@@ -73,6 +75,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarRlEmbed);
 
     };
+
     if(juego === "ow"){
         let retarOwEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
@@ -88,6 +91,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarOwEmbed);
 
     };
+
     if(juego === "ft"){
         let retarFtEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
@@ -103,6 +107,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarFtEmbed);
 
     };
+
     if(juego === "lol"){
         let retarLolEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
@@ -118,6 +123,7 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarLolEmbed);
 
     };
+
     if(juego === "csgo"){
         let retarCsgoEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
