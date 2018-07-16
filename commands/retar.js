@@ -3,7 +3,7 @@ const Mongoose = require("mongoose");
 const Reto = require("../models/retadorLKC.js");
 
 module.exports.run = async (bot, message, args) =>
-{   Mongoose.connect(process.env.MONGODB_URI);
+{   /*Mongoose.connect(process.env.MONGODB_URI);
 
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args[1];
@@ -193,7 +193,7 @@ console.log(juego);
         retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
-    };
+    };*/
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
 
