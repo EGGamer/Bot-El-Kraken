@@ -9,4 +9,4 @@ const retoSchema = Mongoose.Schema({
     tiempo: String
 });
 
-module.exports = Mongoose.model("reto", retadorLkcSchema);
+module.exports = Mongoose.model("reto", retoSchema);
