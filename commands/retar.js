@@ -33,7 +33,7 @@ console.log(juego);
         retosChannel.send(retarDbDEmbed);
         //Crear y enviar a la base de datos
         const retoLKC = new Reto({
-            retador: message.author.user.username,
+            retador: message.member.user.username,
             retadorID: message.author.id,
             retado: founder.user.username,
             juego: juego,
