@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) =>
 {   Mongoose.connect(process.env.MONGODB_URI);
 
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let juego = args.join(" ").slice(22)
+    let juego = args.slice(1).join(" ");
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
@@ -40,6 +40,7 @@ module.exports.run = async (bot, message, args) =>
         report.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
+
     };
     if(juego === "sot"){
         let retarSotEmbed = new Discord.RichEmbed()
