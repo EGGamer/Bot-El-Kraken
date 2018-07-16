@@ -58,7 +58,16 @@ console.log(juego);
         .setThumbnail("https://compass-ssl.xbox.com/assets/25/75/2575a893-7267-4ad5-ad44-3a4a439c3d0c.png?n=dt_hero_SOT_logo.png")
         .setColor("#39efbf");
         retosChannel.send(retarSotEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
 
     if(juego === "rl"){
@@ -74,7 +83,16 @@ console.log(juego);
         .setThumbnail("https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png")
         .setColor("#006dfc");
         retosChannel.send(retarRlEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
 
     if(juego === "ow"){
@@ -90,7 +108,16 @@ console.log(juego);
         .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Overwatch_circle_logo.svg/2000px-Overwatch_circle_logo.svg.png")
         .setColor("#ff8300");
         retosChannel.send(retarOwEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
 
     if(juego === "ft"){
@@ -106,7 +133,16 @@ console.log(juego);
         .setThumbnail("https://bsmknighterrant.org/wp-content/uploads/2018/05/Fortnite-logo.png")
         .setColor("#7e00fc");
         retosChannel.send(retarFtEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
 
     if(juego === "lol"){
@@ -122,7 +158,16 @@ console.log(juego);
         .setThumbnail("https://savepoint.es/wp-content/uploads/2014/11/ikl0Si.png")
         .setColor("#f4e542");
         retosChannel.send(retarLolEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
 
     if(juego === "csgo"){
@@ -138,7 +183,16 @@ console.log(juego);
         .setThumbnail("http://1000logos.net/wp-content/uploads/2017/12/CSGO-Logo.png")
         .setColor("#f49d41");
         retosChannel.send(retarCsgoEmbed);
-
+        const retoLKC = new Reto({
+            retador: message.member.user.username,
+            retadorID: message.author.id,
+            retado: founder.user.username,
+            juego: juego,
+            tiempo: message.createdAt
+        });
+        retoLKC.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
     };
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
