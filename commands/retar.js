@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) =>
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
     
     //Si no es founder
-    if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
+  //  if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
 
     //Si es un juego elegible
     if(juego === "dbd"){
