@@ -32,9 +32,9 @@ module.exports.run = async (bot, message, args) =>
         retosChannel.send(retarDbDEmbed);
         //Crear y enviar a la base de datos
         const retoLKC = new Reto({
-            retador: message.author,
+            retador: message.member.displayUsername,
             retadorID: message.author.id,
-            retado: founder,
+            retado: founder.member.displayUsername,
             juego: juego,
             tiempo: message.createdAt
         });
