@@ -46,7 +46,7 @@ console.log(juego);
         retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
-
+        message.member.user.addRole(yaRetadoRole);
     };
 
     if(juego === "sot"){
