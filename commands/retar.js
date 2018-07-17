@@ -8,8 +8,8 @@ module.exports.run = async (bot, message, args) =>
     let member = message.member;
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args[1];
-    let yaRetadoRole = message.guild.roles.find(`name`, "Ha Retado");
-    let founderRole = message.guild.roles.find(`name`, "LKC Founder");
+    let yaRetadoRole = message.guild.roles.get("468689202759073793");
+    let founderRole = message.guild.roles.get("449914515119931392");
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
     
