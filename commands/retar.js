@@ -5,6 +5,7 @@ const Reto = require("../models/retadorLKC.js");
 module.exports.run = async (bot, message, args) =>
 {   Mongoose.connect(process.env.MONGODB_URI);
 
+    let member = message.member.user;
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args[1];
     let yaRetadoRole = message.guild.roles.find(`name`, "Ha Retado");
@@ -46,7 +47,7 @@ console.log(juego);
         retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
-        message.member.user.addRole(yaRetadoRole);
+        member.addRole(yaRetadoRole).catch(console.error);
     };
 
     if(juego === "sot"){
