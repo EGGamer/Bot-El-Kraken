@@ -47,7 +47,7 @@ console.log(juego);
         retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
-        member.roles.addRole(yaRetadoRole).catch(console.error);
+
     };
 
     if(juego === "sot"){
