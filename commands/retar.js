@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) =>
     
     //Si no es founder
     if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
-    if(message.member.roles.has(yaRetadoRole)) return message.reply("ya has retado este mes. ¡No puedes retar más de una vez al mes!")
+    if(message.member.user.roles.has(yaRetadoRole)) return message.reply("ya has retado este mes. ¡No puedes retar más de una vez al mes!");
+
 console.log(founder.user.username);
 console.log(juego);
 
