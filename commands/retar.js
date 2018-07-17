@@ -3,18 +3,21 @@ const Mongoose = require("mongoose");
 const Reto = require("../models/retadorLKC.js");
 
 module.exports.run = async (bot, message, args) =>
-{   /*Mongoose.connect(process.env.MONGODB_URI);
+{   Mongoose.connect(process.env.MONGODB_URI);
 
     let founder = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let juego = args[1];
+    let yaRetadoRole = message.guild.roles.find(`name`, "Ha Retado");
     let founderRole = message.guild.roles.find(`name`, "LKC Founder");
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
     
     //Si no es founder
-  //  if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
+    if(!founder.roles.has(founderRole.id)) return message.reply("debes retar a un LKC Founder");
+    if(message.member.roles.has(yaRetadoRole)) return message.reply("ya has retado este mes. ¡No puedes retar más de una vez al mes!")
 console.log(founder.user.username);
 console.log(juego);
+
     //Si es un juego elegible
     if(juego === "dbd"){
         
@@ -193,7 +196,7 @@ console.log(juego);
         retoLKC.save()
         .then(result => console.log(result))
         .catch(err => console.log(err));
-    };*/
+    };
    // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
 }
 
