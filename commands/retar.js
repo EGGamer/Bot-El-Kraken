@@ -199,7 +199,7 @@ console.log(juego);
         .then(result => console.log(result))
         .catch(err => console.log(err));
     };
-   // retosChannel.send(`<@${message.author.id}> ha retado a ${founder} a jugar a ${juego}`);
+
 }
 
 module.exports.help = {
