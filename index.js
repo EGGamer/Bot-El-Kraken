@@ -1,4 +1,4 @@
-const botconfig = require("./botconfig.json");
+const botconfig = require("./node_modules/config/botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
@@ -55,7 +55,10 @@ bot.on('guildMemberAdd', member => {
     member.send(`¡${member.user.username} bienvenido a Los Kruken Chanclas! Recuerda leer #información para informarte sobre el servidor. ;) `);
     let miembroRole = member.guild.roles.find(`name`, "Miembros ﴾👥﴿");    
     member.addRole(miembroRole).catch(console.error);
+    console.log(`Nuevo killer ${member}`);
+    let adminschat = member.guild.channels.find(`name`, "admins-chat");
+    adminschat.send(`Nuevo miembro, recordad ponerle roles ${member}`);
 });
 
 
-bot.login(process.env.token);
+bot.login(botconfig.token);

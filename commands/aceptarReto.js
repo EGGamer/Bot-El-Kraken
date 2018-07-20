@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) =>
     
     let aceptarEmbed = new Discord.RichEmbed()
     .setTitle("RETO ACEPTADO")
-    .setDescription(`<@${message.author.id}> ha aceptado el reto de ${retador}. El juego es ${juego}.`)
+    .setDescription(`<@${message.author.id}> ha aceptado el reto de ${retador}. El juego es **${juego}**.`)
     .addField("LKC FOUNDER:", `<@${message.author.id}>`)
     .setTimestamp()
     .setColor("#4cff4f");
