@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
+const Mongoose = require("mongoose");
+const Report = require("../models/report.js");
+const botconfig = require("../node_modules/config/botconfig.json");
 
 module.exports.run = async (bot, message, args) =>
-{
+{   
+    Mongoose.connect(botconfig.mongoose);
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("No se ha podido encontrar al usuario.");
     let reason = args.slice(1).join(" ");
