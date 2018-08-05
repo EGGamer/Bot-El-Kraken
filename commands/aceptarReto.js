@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+let chanclas = require("../chanclas.json");
+const fs = require("fs");
 
 module.exports.run = async (bot, message, args) =>
 {
@@ -14,6 +16,18 @@ module.exports.run = async (bot, message, args) =>
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
 
     
+    let rCoins = chanclas[retador.id].chanclas;    
+    
+    if(rCoins < 1000) return message.reply(`¡${retador} no tiene suficientes monedas. No podrá retar hasta que consiga 1000 monedas!`);
+
+
+    chanclas[retador.id] = {
+        chanclas: rCoins - parseInt(1000)
+    };
+    fs.writeFile("./chanclas.json", JSON.stringify(chanclas), (err) =>{
+        if(err) console.log(err)
+    });
+
     let aceptarEmbed = new Discord.RichEmbed()
     .setTitle("RETO ACEPTADO")
     .setDescription(`<@${message.author.id}> ha aceptado el reto de ${retador}. El juego es **${juego}**.`)
@@ -21,6 +35,7 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp()
     .setColor("#4cff4f");
     retosChannel.send(aceptarEmbed);
+
 }
 }
     
