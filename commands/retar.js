@@ -3,6 +3,7 @@ const Mongoose = require("mongoose");
 const Reto = require("../models/retadorLKC.js");
 const botconfig = require("../node_modules/config/botconfig.json");
 
+
 module.exports.run = async (bot, message, args) =>
 {   Mongoose.connect(botconfig.mongoose);
 
@@ -28,9 +29,9 @@ console.log(juego);
         let retarDbDEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Dead by Daylight se acordará una fecha para hacer la partida.")
-        .addField("LA PARTIDA Y CÓMO GANAR", "La partida será privada. El founder Killer, y el que ha retado survivor (si los dos están de acuerdo se pueden cambiar los roles). El retador puede llamar a 3 amigos suyo a que le ayuden en la partida, como una premade.. Si el retador escapa gana en cambio si muere pierde.")
-        .addField("REGLAS", "No perks, ni add-ons, sólo pura habilidad. [Sujeto a Cambios]")
-        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "La partida será pública. Si el retador obtiene más puntos que el LKC Founder gana.")
+        //.addField("REGLAS", "No perks, ni add-ons, sólo pura habilidad. [Sujeto a Cambios]")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder. Si gana al capitán de DbD (Fruria) obtendrá un rol mejor.")
         .addField("RETADOR:", `<@${message.author.id}>`, true)
         .addField("LKC FOUNDER RETADO:", `${founder}`, true)
         .setTimestamp()
@@ -55,9 +56,9 @@ console.log(juego);
         let retarSotEmbed = new Discord.RichEmbed()
         .setTitle("¡Alguien ha retado a un LKC Founder!")
         .setDescription("Si el LKC Founder acepta el reto siempre y cuando tenga Sea of Thieves se acordará una fecha para hacer el reto.")
-        .addField("LA PARTIDA Y CÓMO GANAR", "Será en el mismo barco. En una misión de calaveras del que tenga nivel más alto. El que más muertes por los esqueletos tenga en una isla pierde. Si los dos quedan a 0 muertes, o cantidad de muertes iguales, se hace otra isla.")
-        .addField("REGLAS", "Cualquier arma, se pueden comer platanos. No está permitido el uso de cañones.")
-        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder.")
+        .addField("LA PARTIDA Y CÓMO GANAR", "El que antes desentirre un cofre de adivinanza de una isla GRANDE gana.")
+        .addField("REGLAS", "Se debe cavar normal, no sirve cavar con el exploit de cavar más rápido.")
+        .addField("PREMIO", "Si el que reta gana, se le otorgará un rol de haber ganado a un LKC Founder. Si gana al capitán de SoT (EG) obtendrá un mejor rol.")
         .addField("RETADOR:", `<@${message.author.id}>`, true)
         .addField("LKC FOUNDER RETADO:", `${founder}`, true)
         .setTimestamp()
