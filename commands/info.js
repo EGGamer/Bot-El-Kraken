@@ -9,7 +9,13 @@ module.exports.run = async (bot, message, args) =>
     .setColor("#4286f4")
     .setThumbnail(bicon)
     .addField("Nombre del bot", bot.user.username)
+    .addBlankField()
+    .addField(`Prefix del bot`, "+")
+    .addBlankField()
     .addField(`Versión del bot`, `${botconfig.version}`)
+    .addField(`Versión de Node.js`, `${process.version}`)
+    .addField(`Versión de Discord.js`, `${Discord.version}`)
+    .addBlankField()
     .addField("Creado por", "EG Gamer");
     
 
