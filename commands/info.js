@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) =>
     .setThumbnail(bicon)
     .addField("Nombre del bot", bot.user.username)
     .addBlankField()
-    .addField(`Prefix del bot`, "+")
+    .addField(`Prefix del bot`, `${botconfig.prefix}`)
     .addBlankField()
     .addField(`Versión del bot`, `${botconfig.version}`)
     .addField(`Versión de Node.js`, `${process.version}`)

@@ -32,6 +32,7 @@ function reloadCmds(){
 
 
 bot.on("message", async message => {
+    let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
         console.log(`Mensaje por DM recivido: ${message.content}`)
