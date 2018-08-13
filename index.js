@@ -1,4 +1,5 @@
 const botconfig = require("./node_modules/config/botconfig.json");
+const token = require("./node_modules/config/token.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const sm = require("string-similarity");
@@ -64,7 +65,7 @@ bot.on("message", async message => {
     //SISTEMA DE XP
     if(message.guild.name === "Taberna Secreta de LKC"){
         //console.log("Es taberna secreta, no se sube nivel.");
-        return;
+        //return;
     }
     let kappeRol = message.guild.roles.find(`name`, "Kappa");
     let sirenaRol = message.guild.roles.find(`name`, "Sirena");
@@ -179,7 +180,7 @@ bot.on("message", async message => {
             message.channel.send(lvl100);
             message.member.removeRole(leviatanRol.id).catch(console.error);
         }
-        else if(!nextLevel === 1 || 5 || 10 || 15 || 25 || 35 || 50 || 75 || 100)
+        else if(!nextLevel === 1 & 5 & 10 & 15 & 25 & 35 & 50 & 75 & 100)
         {
             let lvlUp = new Discord.RichEmbed()
             .setAuthor(message.author.username)
@@ -206,21 +207,16 @@ bot.on("message", async message => {
 
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online! ${botconfig.version}`);
-    //let canalBot = message.guild.channels.find(`name`, "cambios-bot");
-    //canalBot.send("Estoy activo");
     bot.user.setActivity(`EL KRAKEN ${botconfig.version}`, {type: "PLAYING"});
-  //  bot.user.setActivity(`EN MANTENIMIENTO`);
-    
-    //bot.user.setActivity("-kayuda | Bot Oficial de LOS KRUKEN CHANCLAS. ");
+
 });
 bot.on('guildMemberAdd', member => {
     member.send(`¡${member.user.username} bienvenido a Los Kruken Chanclas! Recuerda leer #información para informarte sobre el servidor. ;) `);
     let miembroRole = member.guild.roles.find(`name`, "Miembros ﴾👥﴿");    
     member.addRole(miembroRole).catch(console.error);
     console.log(`Nuevo usuario ${member}`);
-    let adminschat = member.guild.channels.find(`name`, "admins-chat");
-    adminschat.send(`Nuevo miembro, recordad ponerle roles ${member}`);
+    
 });
 
 
-bot.login(botconfig.token);
+bot.login(token.token);
