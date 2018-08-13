@@ -39,8 +39,6 @@ bot.on("message", async message => {
         return message.reply("¡Hey no me hables por aquí!");      
         
     };
-    
-    let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");  
   
     let prefix = botconfig.prefix; 
     let messageArray = message.content.split(" ");

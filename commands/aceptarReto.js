@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) =>
 
 
     chanclas[retador.id] = {
-        chanclas: rCoins - parseInt(1000)
+        chanclas: rCoins - parseInt(50)
     };
     fs.writeFile("./chanclas.json", JSON.stringify(chanclas), (err) =>{
         if(err) console.log(err)

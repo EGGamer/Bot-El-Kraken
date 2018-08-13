@@ -59,7 +59,7 @@ module.exports.run = async (bot, message, args) =>
     //ROLES SOT
     if(role === "acaparador de oro"){
         if(!message.member.roles.has(acaparadorRol.id)) return message.reply("¡No tienes ese rol!").then(msg => msg.delete(10000));
-        message.member.removeRole(twitchRol.id).catch(console.error);
+        message.member.removeRole(acaparadorRol.id).catch(console.error);
     }
     if(role === "orden de las almas"){
         if(!message.member.roles.has(almasRol.id)) return message.reply("¡No tienes ese rol!").then(msg => msg.delete(10000));

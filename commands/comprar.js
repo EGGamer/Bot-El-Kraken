@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) =>
     if(!ris) return message.channel.send("No he podido encontrar el canal de incidentes");
 
    //Precios
-    let musicaReservadoPrecio = 1000;
+    let musicaReservadoPrecio = 30;
 
     if(!chanclas[message.author.id])
     {
