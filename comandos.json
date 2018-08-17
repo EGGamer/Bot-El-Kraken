@@ -1,0 +1,179 @@
+{
+    "Ayuda": {
+        "nombre": "Ayuda",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para obtener ayuda sobre comandos.",
+        "uso": "ayuda [grupo / comando]"
+    },
+    "Info": {
+        "nombre": "Info",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para obtener información sobre el bot.",
+        "uso": "info"
+    },
+    "Reportar": {
+        "nombre": "Reportar",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para reportar un usuario o error.",
+        "uso": "reportarerror <error> o reportarusuario <usuario> <razón>"
+    },
+    "Sugerencia": {
+        "nombre": "Sugerencia",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para sugerir un cambio.",
+        "uso": "sugerir <sugerencia>"
+    },
+    "Retar": {
+        "nombre": "Retar",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para retar a un LKC Founder.",
+        "uso": "retar <lkc founder> <diminutivo del juego>"
+    },
+    "Cancelar Reto": {
+        "nombre": "Cancelar Reto",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para cancelar el reto hacia un LKC Founder.",
+        "uso": "retar <lkc founder> <diminutivo del juego> <razón>"
+    },
+    "Info del server": {
+        "nombre": "Info del Server",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para obtener información breve del servidor.",
+        "uso": "serverinfo"
+    },
+    "Suicidar": {
+        "nombre": "Suicidar",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para suicidarse. Es un comando para pasar el rato.",
+        "uso": "suicidar [nota de suicidio]"
+    },
+    "Nivel": {
+        "nombre": "Nivel",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para saber tu nivel, XP actual y rol.",
+        "uso": "nivel"
+    },
+    "Chanclas": {
+        "nombre": "Chanclas",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para saber la cantidad de chanclas y obtener chanclas aleatorias.",
+        "uso": "chanclas"
+    },
+    "Pagar": {
+        "nombre": "Pagar",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para transferir chanclas a otra persona.",
+        "uso": "pagar <usuario> <cantidad de chanclas>"
+    },
+    "Comprar": {
+        "nombre": "Comprar",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para comprar productos con chanclas.",
+        "uso": "comprar <producto>"
+    },
+    "Añadir rol": {
+        "nombre": "Añadir rol",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para autoasignarse un rol.",
+        "uso": "añadirrol <rol>"
+    },
+    "Quitar Rol": {
+        "nombre": "Quitar Rol",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para autoeliminarse un rol.",
+        "uso": "norol <rol>"
+    },
+    "Busco": {
+        "nombre": "Busco",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para buscar gente con quien jugar.",
+        "uso": "busco <diminutivo del juego>"
+    },
+    "Ping": {
+        "nombre": "Ping",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para saber el tiempo de respuesta del bot y la API de Discord.",
+        "uso": "ping"
+    },
+    "Ban": {
+        "nombre": "ban",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para bloquear a alguien del servidor.",
+        "uso": "ban <usuario> <razón>"
+    },
+    "Kick": {
+        "nombre": "Kick",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para expulsar a alguien del servidor.",
+        "uso": "kick <usuario> <razón>"
+    },
+    "Clear": {
+        "nombre": "Clear",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para eliminar una cantidad de mensaje de golpe (siempre y cuando no sean de más de 14 días de antigedad).",
+        "uso": "clear <cantidad>"
+    },
+    "Aceptar retos": {
+        "nombre": "Aceptar Retos",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para aceptar el reto de alguien y cobrarle la cantidad de chanclas necesaria.",
+        "uso": "acpetarReto <retador> <juego retado>"
+    },
+    "Rechazar retos": {
+        "nombre": "Rechazar Retos",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para rechzar el reto de alguien.",
+        "uso": "rechazarReto <retador> <juego retado> <razón>"
+    },
+    "Reputaciones": {
+        "nombre": "Reputaciones y Niveles",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para mandar un mensaje de nuevas reputaciones. (Antes se tiene que actualizar).",
+        "uso": "reps"
+    },
+    "Decir": {
+        "nombre": "Decir",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para hacer que el bot diga lo que escribas.",
+        "uso": "say <lo que quieras que diga>"
+    },
+    "Operativo": {
+        "nombre": "Operativo",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para mandar notificación de bot operativo.",
+        "uso": "botoperativo"
+    },
+    "Mantenimiento": {
+        "nombre": "Mantenimiento",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para mandar notificación de bot en mantenimiento.",
+        "uso": "botmantenimiento"
+    },
+    "In-operativo": {
+        "nombre": "Inoperativo",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para mandar notificación de bot inoperativo.",
+        "uso": "botinoperativo"
+    },
+    "Anunciar Ganador": {
+        "nombre": "Anunciar ganador",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para mandar notificación de ganador de EMDLC.",
+        "uso": "ganador <usuario ganador>"
+    },
+    "Bot Reset": {
+        "nombre": "Reinicio Bot",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para reiniciar comandos del bot.",
+        "uso": "reiniciar"
+    },
+    "Obtener Chanclas": {
+        "nombre": "Obtener Chanclas",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para obtener chanclas (solo para LKC Founders).",
+        "uso": "obtenerChanclas"
+    }
+    
+    
+
+}

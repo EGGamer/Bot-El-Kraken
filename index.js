@@ -32,15 +32,17 @@ function reloadCmds(){
 }
 
 
-bot.on("message", async message => {
-    let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
+
+bot.on("message", async message => {    
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
         console.log(`Mensaje por DM recivido: ${message.content}`)
         return message.reply("¡Hey no me hables por aquí!");      
         
     };
-  
+
+    let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
+
     let prefix = botconfig.prefix; 
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -59,7 +61,7 @@ bot.on("message", async message => {
         console.log("REINICIO");
         channel.send('Reiniciando bot...')
         .then(msg => bot.destroy())
-        .then(() => bot.login(botconfig.token));
+        .then(() => bot.login(token.token));
     }
     //FIN DE RESETEO
     //SISTEMA DE XP
@@ -205,10 +207,19 @@ bot.on("message", async message => {
 
 });
 
+//ESTADOS CAMBIANTES
+let statuses = ['EL KRAKEN', 'k-ayuda'];
+
 bot.on("ready", async =>{
     console.log(`${bot.user.username} está online! ${botconfig.version}`);
-    bot.user.setActivity(`EL KRAKEN ${botconfig.version}`, {type: "PLAYING"});
+    bot.user.setActivity(`EL KRAKEN ${botconfig.version}`, {type: "LISTENING"});
+    setInterval(function(){
+    let status = statuses[Math.floor(Math.random()*statuses.length)];
+    bot.user.setActivity(`${status} ${botconfig.version}`, {type: "LISTENING"});
+   // console.log(status);
+    }, 10000)
 
+    
 });
 bot.on('guildMemberAdd', member => {
     member.send(`¡${member.user.username} bienvenido a Los Kruken Chanclas! Recuerda leer #información para informarte sobre el servidor. ;) `);

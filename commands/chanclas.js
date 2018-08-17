@@ -32,10 +32,10 @@ module.exports.run = async (bot, message, args) =>
     let uCoins = chanclas[message.author.id].chanclas;
 
     let chanclasEmbed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.username} 💸`)
+    .setAuthor(`${message.author.username} <:lkc_moneda:478118766270611459>`)
     .setColor("#00FF00")
-    .addField("Chanclas obtenidas", `${chanclaAmt} chanclas`)
-    .addField("Chanclas totales", `${uCoins} chanclas`);
+    .addField("Chanclas obtenidas", `${chanclaAmt}`)
+    .addField("Chanclas totales", `${uCoins}`);
 
     message.channel.send(chanclasEmbed);
     
