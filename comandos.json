@@ -172,6 +172,18 @@
         "grupo": "Administradores",
         "descripcion": "Un comando para obtener chanclas (solo para LKC Founders).",
         "uso": "obtenerChanclas"
+    },
+    "Changelog": {
+        "nombre": "Cambios",
+        "grupo": "Usuarios",
+        "descripcion": "Un comando para conocer los recientes cambios del bot en la versión más reciente.",
+        "uso": "cambios"
+    },
+    "Prefix": {
+        "nombre": "Prefix",
+        "grupo": "Administradores",
+        "descripcion": "Un comando para cambiar el prefijo del bot.",
+        "uso": "prefix <prefijo>"
     }
     
     

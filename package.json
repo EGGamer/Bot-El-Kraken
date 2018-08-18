@@ -9,11 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bufferutil": "^4.0.0",
     "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^4.0.0",
     "fortnite": "^4.1.1",
     "mongodb": "^3.1.1",
     "mongoose": "^5.1.7",
     "ms": "^2.1.1",
-    "string-similarity": "^1.2.0"
+    "node-gyp": "^3.8.0",
+    "rebuild": "^0.1.2",
+    "string-similarity": "^1.2.0",
+    "ytdl-core": "^0.24.0"
   }
 }

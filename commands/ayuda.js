@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const comandos = JSON.parse(fs.readFileSync(`./comandos.json`, `utf8`));
 
-module.exports.run = async (bot, message, args) =>
+module.exports.run = async (bot, message, args, prefix) =>
 {
     let argus = args[0];
     console.log(argus);
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) =>
         for (var cmd in comandos){
             if(comandos[cmd].grupo.toUpperCase() === "USUARIOS"){
                 comandosEncontrados++
-                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *k-${comandos[cmd].uso}*`)
+                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *${prefix}${comandos[cmd].uso}*`)
             }
             
         }
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) =>
         for (var cmd in comandos){
             if(comandos[cmd].grupo.toUpperCase() === "ADMINISTRADORES"){
                 comandosEncontrados++
-                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *k-${comandos[cmd].uso}*`)
+                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *${prefix}${comandos[cmd].uso}*`)
             }
             
         }

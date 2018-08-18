@@ -43,12 +43,23 @@ bot.on("message", async message => {
 
     let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
 
-    let prefix = botconfig.prefix; 
+
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+    if(!prefixes[message.guild.id]){
+        prefixes[message.guild.id] = {
+            prefixes: botconfig.prefix
+        };
+    }   
+    let prefix = prefixes[message.guild.id].prefixes; 
+
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
-    if(commandfile) commandfile.run(bot,message,args);
+    if(message.content.startsWith(prefix)){
+    if(commandfile) commandfile.run(bot,message,args,prefix);
+    }
     
     //RESETEO DEL BOT
     if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!")
@@ -95,6 +106,7 @@ bot.on("message", async message => {
     xp[message.author.id].xp = curxp + xpAdd;
     
     let nextLevel = curlvl + 1; 
+    var isLvlUp = false;
         
     if(curlvl === 1){
             message.member.addRole(kappeRol.id);
@@ -110,7 +122,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${sirenaRol}!`);
             message.channel.send(lvl5);
             message.member.removeRole(kappeRol.id).catch(console.error);
-            
+            isLvlUp = true;
         }
         if(nextLevel === 10)
         {
@@ -121,6 +133,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${hipocampoRol}!`);
             message.channel.send(lvl10);
             message.member.removeRole(sirenaRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 15)
         {
@@ -131,6 +144,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${cangregoRol}!`);
             message.channel.send(lvl15);
             message.member.removeRole(hipocampoRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 25)
         {
@@ -141,6 +155,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${megalodonRol}!`);
             message.channel.send(lvl25);
             message.member.removeRole(cangregoRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 35)
         {
@@ -151,6 +166,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${hydraRol}!`);
             message.channel.send(lvl35);
             message.member.removeRole(megalodonRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 50)
         {
@@ -161,6 +177,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${leviatanRol}!`);
             message.channel.send(lvl50);
             message.member.removeRole(nessRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 75)
         {
@@ -171,6 +188,7 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! ¡Ahora es ${leviatanRol}!`);
             message.channel.send(lvl75);
             message.member.removeRole(hydraRol.id).catch(console.error);
+            isLvlUp = true;
         }
         else if(nextLevel === 100)
         {
@@ -181,14 +199,18 @@ bot.on("message", async message => {
             .setDescription(`¡${message.author} ha subido al nivel máximo del servidor (${nextLevel})! ¡Ahora es ${krakenRol}! ¡Enhorabuena!`);
             message.channel.send(lvl100);
             message.member.removeRole(leviatanRol.id).catch(console.error);
+            isLvlUp = true;
         }
-        else if(!nextLevel === 1 & 5 & 10 & 15 & 25 & 35 & 50 & 75 & 100)
+        
+        else if (isLvlUp === false)
         {
+          
             let lvlUp = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setColor("#aa42f4")
             .setDescription(`¡${message.author} ha subido al nivel ${nextLevel}! `);
             message.channel.send(lvlUp);
+            
         }
         xp[message.author.id].level = nextLevel;   
         chanclas[message.author.id] = {
