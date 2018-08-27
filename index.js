@@ -62,12 +62,12 @@ bot.on("message", async message => {
     }
     
     //RESETEO DEL BOT
-    if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!")
-    if(message.content === `${botconfig.prefix}reiniciar`){
+   if(message.content === `${botconfig.prefix}reiniciar`){
         resetBot(message.channel);
      
     }
     function resetBot(channel) {
+        if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!");
         reloadCmds();
         console.log("REINICIO");
         channel.send('Reiniciando bot...')
