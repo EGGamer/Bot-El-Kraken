@@ -28,9 +28,7 @@ function reloadCmds(){
         bot.commands.set(props.help.name, props);
     })
 
-});
-}
-
+});}
 
 
 bot.on("message", async message => {    
@@ -62,12 +60,13 @@ bot.on("message", async message => {
     }
     
     //RESETEO DEL BOT
-    if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!")
+    
     if(message.content === `${botconfig.prefix}reiniciar`){
         resetBot(message.channel);
      
     }
     function resetBot(channel) {
+        if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!");
         reloadCmds();
         console.log("REINICIO");
         channel.send('Reiniciando bot...')
@@ -236,7 +235,7 @@ bot.on("ready", async =>{
     console.log(`${bot.user.username} está online! ${botconfig.version}`);
     bot.user.setActivity(`EL KRAKEN ${botconfig.version}`, {type: "LISTENING"});
     setInterval(function(){
-    let status = statuses[Math.floor(Math.random()*statuses.length)];
+    let status = statuses[Math.floor(Math.random()*statuses.length )];
     bot.user.setActivity(`${status} ${botconfig.version}`, {type: "LISTENING"});
    // console.log(status);
     }, 10000)

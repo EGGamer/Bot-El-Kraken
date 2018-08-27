@@ -1,0 +1,11 @@
+Para iniciar el bot sigue estos pasos:
+
+1: Mientras mantienes pulsado SHIFT haz CLICK DERECHO en esta carpeta, y selecciona "ABIR VENTANA DE POWERSHELL AQUÍ".
+
+2: En la ventana de PowerShell escribe lo siguiente: npm install -g pm2
+
+3: Ahora escribe en la misma ventana de PowerShell lo siguiente: pm2 start index.js --name "elkraken" --watch
+
+¡Y ya está! Ahora el bot se reiniciará solo cuando haya cambios. Puedes cerrar si quieres la ventana de PowerShell que el bot seguirá funcionando.
+Para ver los logs (el registro que deja el bot cuando hay errores por ejemplo) escribe en la ventana de PowerShell: pm2 logs elkraken
+
