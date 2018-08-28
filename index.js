@@ -56,14 +56,14 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(message.content.startsWith(prefix)){
-    if(commandfile) commandfile.run(bot,message,args,prefix);
+    if(commandfile) commandfile.run(bot,message,args,prefix); return;
     }
     
     //RESETEO DEL BOT
     
     if(message.content === `${botconfig.prefix}reiniciar`){
         resetBot(message.channel);
-     
+        
     }
     function resetBot(channel) {
         if(!message.member.roles.has(devBorROle.id)) return message.reply("¡No puedes hacer eso!");

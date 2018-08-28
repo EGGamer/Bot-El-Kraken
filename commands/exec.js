@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const config = require("../node_modules/config/botconfig.json")
-
+const config = require("../node_modules/config/botconfig.json");
+var exec = require('child_process').exec;
 module.exports.run = async (bot, message, args) =>
 {
     if (message.author.id !== config.ownerID) return;
