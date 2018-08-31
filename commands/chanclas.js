@@ -1,45 +1,69 @@
 const Discord = require("discord.js");
-let chanclas = require("../chanclas.json");
+const botconfig = require("../node_modules/config/botconfig.json");
 const fs = require("fs");
+const mongoose = require("mongoose");
+mongoose.connect(botconfig.mongoose, {
+    useNewUrlParser: true
+});
+const Money = require("../models/chancla.js");
 
 module.exports.run = async (bot, message, args) =>
 {
-    if(!chanclas[message.author.id])
-    {
-        chanclas[message.author.id] = {
-            chanclas: 0
-        };
-    }
-
-    
-    let chanclaAmt = Math.floor(Math.random() * 3) +1;
+    let chanclaAmt = Math.floor(Math.random() * 5) +1;
     let baseAmt = Math.floor(Math.random() * 3) +1;
     console.log(`${chanclaAmt} ; ${baseAmt}`);
-    //message.channel.send(`*(Mensaje para testeo)* __**Chancla Amount**__: **${chanclaAmt}** ; __**Base Amount**__: **${baseAmt}**. Las dos tienen que coincidir para otorgar chanclas.`);
     if(chanclaAmt === baseAmt)
     {
-        chanclas[message.author.id] = {
-            chanclas: chanclas[message.author.id].chanclas + chanclaAmt
-        };
+    Money.findOne({
+        userID: message.author.id, 
+        serverID: message.guild.id
+    }, (err, money) => {
+        if(err) console.log(err);
+        if(!money){
+            const newMoney = new Money({
+                userID: message.author.id,
+                serverID: message.guild.id,
+                money: chanclaAmt
+            })
 
-        fs.writeFile("./chanclas.json", JSON.stringify(chanclas), (err) => {
-            if (err) console.log(err);
-        });
-    }else{
-        chanclaAmt = 0;
-    }
+            newMoney.save().catch(err => console.log(err));
+        }else {
+            money.money = money.money + chanclaAmt;
+            money.save().then(result => console.log(result)).catch(err => console.log(err));
+        }
+    })
+}
 
-    let uCoins = chanclas[message.author.id].chanclas;
 
-    let chanclasEmbed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.username}`)
-    .setColor("#00FF00")
-    .addField("Chanclas obtenidas", `${chanclaAmt}`)
-    .addField("Chanclas totales", `${uCoins}`);
 
-    message.channel.send(chanclasEmbed);
-    
     message.delete();
+    Money.findOne({
+        userID: message.author.id, 
+        serverID: message.guild.id
+    }, (err, money) => {
+        if(err) console.log(err);
+        
+        let embed = new Discord.RichEmbed()
+        .setColor("#00FF00")
+        .setAuthor(`${message.author.username}`);
+
+        if(!money){
+            embed.addField("Chanclas", "0", true);
+            message.channel.send(embed);
+        }else {
+            if(chanclaAmt !== baseAmt){
+                embed.addField("Chanclas" , money.money, true);
+                message.channel.send(embed);
+            }else if (chanclaAmt === baseAmt){
+            embed.addField("Chanclas" , money.money + chanclaAmt, true);
+            embed.addField("Chanclas Añadidas" , chanclaAmt, true);
+            message.channel.send(embed);
+            }
+            
+        }
+    })
+        
+    
 }
 
 module.exports.help = {

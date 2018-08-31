@@ -5,9 +5,12 @@ const bot = new Discord.Client();
 const sm = require("string-similarity");
 const fs = require("fs");
 bot.commands = new Discord.Collection();
-let chanclas = require("./chanclas.json");
 let xp = require("./xp.json");
-
+const mongoose = require("mongoose");
+mongoose.connect(botconfig.mongoose, {
+    useNewUrlParser: true
+});
+const Money = require("./models/chancla.js");
 reloadCmds();
 
 function reloadCmds(){
@@ -56,7 +59,10 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(message.content.startsWith(prefix)){
-    if(commandfile) commandfile.run(bot,message,args,prefix); return;
+        if(commandfile){
+            commandfile.run(bot,message,args,prefix);
+            return;
+    }
     }
     
     //RESETEO DEL BOT
@@ -77,7 +83,7 @@ bot.on("message", async message => {
     //SISTEMA DE XP
     if(message.guild.name === "Taberna Secreta de LKC"){
         //console.log("Es taberna secreta, no se sube nivel.");
-        //return;
+        return;
     }
     let kappeRol = message.guild.roles.find(`name`, "Kappa");
     let sirenaRol = message.guild.roles.find(`name`, "Sirena");
@@ -212,9 +218,21 @@ bot.on("message", async message => {
             
         }
         xp[message.author.id].level = nextLevel;   
-        chanclas[message.author.id] = {
-            chanclas: parseInt(curlvl * 10)
-        };
+        Money.findOne({
+            userID: message.author.id, 
+            serverID: message.guild.id
+        }, (err, money) => {
+            if(!money){
+                const newMoney = new Money({
+                    userID: retador.id,
+                    serverID: message.guild.id,
+                    money: curlvl * 10
+                })        
+                newMoney.save().catch(err => console.log(err));
+            }
+            money.money = money.money + parseInt(curlvl * 10);
+            money.save().then(result => console.log(result)).catch(err => console.log(err));
+        });
      
     }
     fs.writeFile("./xp.json", JSON.stringify(xp), err => {

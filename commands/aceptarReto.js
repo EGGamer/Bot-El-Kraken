@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
-let chanclas = require("../chanclas.json");
 const fs = require("fs");
-
+const mongoose = require("mongoose");
+const botconfig = require("../node_modules/config/botconfig.json");
+mongoose.connect(botconfig.mongoose, {
+    useNewUrlParser: true
+});
+const Money = require("../models/chancla.js");
 module.exports.run = async (bot, message, args) =>
 {
     //aceptarReto @elRetador juego
@@ -14,27 +18,39 @@ module.exports.run = async (bot, message, args) =>
     let juego = args[1];
     let retosChannel = message.guild.channels.find(`name`, "retadores-lkc");
     if(!retosChannel) return message.channel.send("No he podido encontrar el canal de retos");
+    let precioRetos = 50;
 
-    
-    let rCoins = chanclas[retador.id].chanclas;    
-    
-    if(rCoins < 1000) return message.reply(`¡${retador} no tiene suficientes monedas. No podrá retar hasta que consiga 1000 monedas!`);
+    Money.findOne({
+        userID: retador.id, 
+        serverID: message.guild.id
+    }, (err, money) => {
+        if(err) console.log(err);
+        if(!money){        
+            const newMoney = new Money({
+                userID: retador.id,
+                serverID: message.guild.id,
+                money: 0
+            })        
+            newMoney.save().catch(err => console.log(err));
+            return message.reply("No tiene Chanclas suficientes");
+        }
+        let rCoins = money.money;
+        console.log(rCoins);
+        if(rCoins < precioRetos) return message.reply(`¡${retador} no tiene suficientes monedas! ¡No podrá retar hasta que consiga 50 monedas!`);
+        
+        money.money = money.money - precioRetos;
+        money.save().then(result => console.log(result)).catch(err => console.log(err));
+        let aceptarEmbed = new Discord.RichEmbed()
+        .setTitle("RETO ACEPTADO")
+        .setDescription(`<@${message.author.id}> ha aceptado el reto de ${retador}. El juego es **${juego}**.`)
+        .addField("LKC FOUNDER:", `<@${message.author.id}>`)
+        .setTimestamp()
+        .setColor("#4cff4f");
+        retosChannel.send(aceptarEmbed);
+    });   
 
 
-    chanclas[retador.id] = {
-        chanclas: rCoins - parseInt(50)
-    };
-    fs.writeFile("./chanclas.json", JSON.stringify(chanclas), (err) =>{
-        if(err) console.log(err)
-    });
-
-    let aceptarEmbed = new Discord.RichEmbed()
-    .setTitle("RETO ACEPTADO")
-    .setDescription(`<@${message.author.id}> ha aceptado el reto de ${retador}. El juego es **${juego}**.`)
-    .addField("LKC FOUNDER:", `<@${message.author.id}>`)
-    .setTimestamp()
-    .setColor("#4cff4f");
-    retosChannel.send(aceptarEmbed);
+   
 
 }
 }

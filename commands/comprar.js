@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
-let chanclas = require("../chanclas.json");
 const fs = require("fs");
-
+const mongoose = require("mongoose");
+const botconfig = require("../node_modules/config/botconfig.json");
+mongoose.connect(botconfig.mongoose, {
+    useNewUrlParser: true
+});
+const Money = require("../models/chancla.js");
 module.exports.run = async (bot, message, args) =>
 {
     //k-comprar <lo que quiera>
@@ -9,39 +13,44 @@ module.exports.run = async (bot, message, args) =>
     Cosas para comprar:
     *Reservar el bot de música: 1000 chanclas
     */
-   let compra = args.slice(0).join(" ");
+   let compra = args.join(" ");
    console.log(compra);
-   let uCoins = chanclas[message.author.id].chanclas;
    let ris = message.guild.channels.find(`name`, "r-i-s");
-    if(!ris) return message.channel.send("No he podido encontrar el canal de incidentes");
+if(!ris) return message.channel.send("No he podido encontrar el canal de incidentes");
 
    //Precios
     let musicaReservadoPrecio = 30;
 
-    if(!chanclas[message.author.id])
-    {
-        return message.reply("¡No tienes chanclas!")
-    }
+    Money.findOne({
+        userID: message.author.id, 
+        serverID: message.guild.id
+    }, (err, money) => {
+        if(!money){
+            const newMoney = new Money({
+                userID: retador.id,
+                serverID: message.guild.id,
+                money: 0
+            })        
+            newMoney.save().catch(err => console.log(err));
+            return message.reply("No tiene Chanclas suficientes");
+        }
 
-    if(compra === "Musica Reservado"){
+        if(compra === "Musica Reservado"){
         
-        if(uCoins < musicaReservadoPrecio) return message.reply("¡No tienes suficientes monedas!");
-        chanclas[message.author.id] = {
-            chanclas: uCoins - parseInt(musicaReservadoPrecio)
-        };
-        let compraEmbed = new Discord.RichEmbed()
-        .setTitle("Compra realizada")
-        .setDescription(`${message.author} ha comprado *Musica Reservado*. Otorgadle el rol de Musica Reservado y poned el bot de musica en **DJ Only On**. Dentro de 1 hora quitadle el rol y poned el **DJ Only OFF**.`)
-        .setAuthor(message.author.username)
-        .setColor("#f4e542")
-        .setTimestamp();
-        ris.send(compraEmbed);
-    }
+            if(money.money < musicaReservadoPrecio) return message.reply("¡No tienes suficientes monedas!");
+            money.money = money.money - parseInt(musicaReservadoPrecio);
+            let compraEmbed = new Discord.RichEmbed()
+            .setTitle("Compra realizada")
+            .setDescription(`${message.author} ha comprado *Musica Reservado*. Otorgadle el rol de Musica Reservado y poned el bot de musica en **DJ Only On**. Dentro de 1 hora quitadle el rol y poned el **DJ Only OFF**.`)
+            .setAuthor(message.author.username)
+            .setColor("#f4e542")
+            .setTimestamp();
+            ris.send(compraEmbed);
+            money.save().then(result => console.log(result)).catch(err => console.log(err));
 
-
-    fs.writeFile("./chanclas.json", JSON.stringify(chanclas), (err) =>{
-        if(err) console.log(err)
+        }
     });
+    
 }
 
 module.exports.help = {
