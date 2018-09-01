@@ -10,6 +10,7 @@ mongoose.connect(botconfig.mongoose, {
 });
 const Money = require("./models/chancla.js");
 const Exp = require("./models/xp.js");
+const Prefix = require("./models/prefix.js");
 
 reloadCmds();
 
@@ -44,26 +45,30 @@ bot.on("message", async message => {
 
     let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
 
-
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-
-    if(!prefixes[message.guild.id]){
-        prefixes[message.guild.id] = {
-            prefixes: botconfig.prefix
-        };
-    }   
-    let prefix = prefixes[message.guild.id].prefixes; 
-
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let commandfile = bot.commands.get(cmd.slice(prefix.length));
-    if(message.content.startsWith(prefix)){
-        if(commandfile){
-            commandfile.run(bot,message,args,prefix);
-            
-    }
-    }
+    Prefix.findOne({
+        serverID: message.guild.id}, (err, prefix) => {
+            if(!prefix){
+                const newPrerfix = new Prefix({
+                    serverID: message.guild.id,
+                    prefix: botconfig.prefix
+                })    
+                 
+                newPrerfix.save().catch(err => console.log(err));
+            }
+            let prefix_ = prefix.prefix; 
+            let messageArray = message.content.split(" ");
+            let cmd = messageArray[0];
+            let args = messageArray.slice(1);
+            let commandfile = bot.commands.get(cmd.slice(prefix_.length));
+            if(message.content.startsWith(prefix_)){
+                if(commandfile){
+                    commandfile.run(bot,message,args,prefix);
+            }
+        }
+    })
+     
+    
+    
     
     //RESETEO DEL BOT
     
