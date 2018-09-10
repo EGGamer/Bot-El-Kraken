@@ -281,13 +281,13 @@ bot.on('guildMemberAdd', member => {
     
 });
 bot.on(`guildMemberRemove`, member => {
-    Money.findOneAndRemove({
+    Money.findOneAndDelete({
         userID: message.id, serverID: member.guild.id
     }, (err, res) =>{
         if(err) console.log(err);
         console.log(`El usuario con la ID ${member.id} ha sido eliminado de la base de datos de Chanclas.`);
     });
-    Exp.findOneAndRemove({
+    Exp.findOneAndDelete({
         userID: message.id, serverID: member.guild.id
     }, (err, res) =>{
         if(err) console.log(err);
