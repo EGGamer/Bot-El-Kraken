@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) =>
         var repsDbDEmbed = new Discord.RichEmbed()
         .setColor("#39efbf")
         .setTitle("Reputaciones Actuales")
-        .addField("EG Gamer", "**LVL JUGADOR**: *33*")
+        .addField("EG Gamer", "**LVL JUGADOR**: *34*")
         .addField("Hyren", "**LVL JUGADOR**: *42*")
         .addField("Fran", "**LVL JUGADOR**: *42*")
         .addField("Carlis", "**LVL JUGADOR**: *10*")

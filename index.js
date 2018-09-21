@@ -46,14 +46,18 @@ bot.on("message", async message => {
     let devBorROle = message.guild.roles.find(`name`, "DEV-BOT");
 
     Prefix.findOne({
-        serverID: message.guild.id}, (err, prefix) => {
+        serverID: message.guild.id, 
+        botID: bot.user.id
+        }, (err, prefix) => {
             if(!prefix){
                 const newPrerfix = new Prefix({
                     serverID: message.guild.id,
+                    botID: bot.user.id,
                     prefix: botconfig.prefix
                 })    
                  
                 newPrerfix.save().catch(err => console.log(err));
+                return;
             }
             let prefix_ = prefix.prefix; 
             let messageArray = message.content.split(" ");

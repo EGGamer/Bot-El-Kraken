@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args, prefix) =>
         if(!prefix){
             const newPrerfix = new Prefix({
                 serverID: message.guild.id,
+                botID: bot.user.id,
                 prefix: args[0]
             })        
             newPrerfix.save().catch(err => console.log(err));

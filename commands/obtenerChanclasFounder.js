@@ -20,13 +20,13 @@ module.exports.run = async (bot, message, args) =>
     }, (err, money) => {
         if(!money){
             const newMoney = new Money({
-                userID: retador.id,
+                userID: message.author.id,
                 serverID: message.guild.id,
                 money: cantidad
             })        
             newMoney.save().catch(err => console.log(err));
         }
-        money.money = money.money + parseInt(30);
+        money.money = money.money + parseInt(cantidad);
         money.save().then(result => console.log(result)).catch(err => console.log(err));
     });
 
