@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args, prefix) =>
         for (var cmd in comandos){
             if(comandos[cmd].grupo.toUpperCase() === "USUARIOS"){
                 comandosEncontrados++
-                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *${prefix}${comandos[cmd].uso}*`)
+                embed.addField(`${comandos[cmd].nombre}`, `${comandos[cmd].descripcion}\n**Uso:** *${prefix.prefix}${comandos[cmd].uso}*`)
             }
             
         }

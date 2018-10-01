@@ -87,7 +87,7 @@
         "nombre": "Busco",
         "grupo": "Usuarios",
         "descripcion": "Un comando para buscar gente con quien jugar.",
-        "uso": "busco <diminutivo del juego>"
+        "uso": "busco <diminutivo del juego> [descripción]"
     },
     "Ping": {
         "nombre": "Ping",

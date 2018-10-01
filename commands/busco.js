@@ -5,7 +5,8 @@ module.exports.run = async (bot, message, args) =>
     //-busco <juego>
 
    let juego = args[0];
-   
+   let desc = args.slice(1).join(" ");
+   console.log(desc);
 
    //Canales de texto
    let bgSot = message.guild.channels.find(`name`, "busco-gente-sot");
@@ -29,8 +30,11 @@ module.exports.run = async (bot, message, args) =>
    .setTimestamp()
    .setColor("#e8e8e8")
    .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-  
-
+   if(desc)
+   {
+   buscDbdEmbed.addField(`Descripción`, desc, false);
+   }
+    
    bgDbd.send(`[<@&449912733799022603>]`, buscDbdEmbed);
    
    message.delete();
@@ -45,7 +49,10 @@ module.exports.run = async (bot, message, args) =>
     .setTimestamp()
     .setColor("#39efbf")
     .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-   
+    if(desc)
+    {
+    buscSotEmbed.addField(`Descripción`, desc, false);
+    }
  
     bgSot.send(`[<@&449905080599052294>]`, buscSotEmbed);
     
@@ -61,7 +68,10 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setColor("#006dfc")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-       
+        if(desc)
+        {
+        buscRlEmbed.addField(`Descripción`, desc, false);
+        }  
      
         bgRl.send(`[<@&449904836528570368>]`, buscRlEmbed);
         
@@ -77,7 +87,10 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setColor("#7e00fc")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-       
+        if(desc)
+        {
+        buscFtEmbed.addField(`Descripción`, desc, false);
+        }
      
         bgFt.send(`[<@&457128298431119360>]`, buscFtEmbed);
         
@@ -93,7 +106,10 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setColor("#ff8300")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-       
+        if(desc)
+        {
+        buscOwEmbed.addField(`Descripción`, desc, false);
+        }
      
         bgOw.send(`[<@&449912857342115850>]`, buscOwEmbed);
         
@@ -109,7 +125,10 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setColor("#f4e542")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-       
+        if(desc)
+        {
+        buscLolEmbed.addField(`Descripción`, desc, false);
+        }
      
         bgLol.send(`[<@&458721112600346631>]`, buscLolEmbed);
         
@@ -125,7 +144,10 @@ module.exports.run = async (bot, message, args) =>
         .setTimestamp()
         .setColor("#f49d41")
         .setAuthor(message.member.displayName, message.author.displayAvatarURL);
-       
+        if(desc)
+        {
+        buscCsgoEmbed.addField(`Descripción`, desc, false);
+        }
      
         bgCsgo.send(`[<@&457128716544376832>]`, buscCsgoEmbed);
         
