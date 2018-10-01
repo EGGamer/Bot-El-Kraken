@@ -8,7 +8,6 @@ module.exports.run = async (bot, message, args) =>
     .addField(`Mejora de comando Busco`, `Hemos mejorado el comando de busco. Ahora puedes agregarle una descripción.`)
     .addBlankField()
     .addField("BUG FIXES", `Arreglado comando de ayuda.`);
-
     message.channel.send(embed);
 
 }
