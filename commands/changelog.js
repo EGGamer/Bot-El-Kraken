@@ -5,9 +5,10 @@ module.exports.run = async (bot, message, args) =>
 {
     let embed = new Discord.RichEmbed()
     .setTitle(`CAMBIOS DE LA VERSIÓN ${botconfig.version}`)
-    .addField(`Mejora de comando Busco`, `Hemos mejorado el comando de busco. Ahora puedes agregarle una descripción.`)
+    .addField(`Nuevo Comando`, `Hemos añadido el comando *jumbo*. Este comando permitirá ver los emoticonos del servidor más grandes. Para ello escribid "k-jumbo <el emoticono>".`)
     .addBlankField()
-    .addField("BUG FIXES", `Arreglado comando de ayuda.`);
+    .addField(`Nueva imágen de perfil`, `Ahora El Kraken tiene una nueva foto de perfil ambientada en Halloween.`)
+    //.addField("BUG FIXES", `Arreglado comando de ayuda.`);
     message.channel.send(embed);
 
 }
